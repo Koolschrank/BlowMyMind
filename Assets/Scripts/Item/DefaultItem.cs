@@ -34,6 +34,8 @@ namespace Item
                 
             hitData.ActivateEffects();
         }
+
+
         
         private void FinishUse()
         {
