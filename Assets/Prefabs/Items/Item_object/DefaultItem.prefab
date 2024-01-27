@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitData:
-    forwardForce: 100
+    forwardForce: 1000
     upForce: 100
     damage: 10
   coolDownTime: 0.5

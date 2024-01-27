@@ -7,6 +7,7 @@ namespace Player
 {
     public class PlayerCharacter : MonoBehaviour
     {
+        public Transform body;
         public FloatValue lives;
         Rigidbody rb;
         public float moveSpeed = 10f;
@@ -99,7 +100,7 @@ namespace Player
             // rotate to face direction of movement
             if (movementDirection != Vector3.zero)
             {
-                transform.rotation = Quaternion.LookRotation(movementDirection);
+                body.transform.rotation = Quaternion.LookRotation(movementDirection);
             }
             if (movePower > velocityToWalk)
             {
