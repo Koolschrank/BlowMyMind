@@ -1,5 +1,156 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2843275660835256068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4971792276870881090}
+  - component: {fileID: 7120928721351664888}
+  - component: {fileID: 2710709168942744862}
+  - component: {fileID: 7415498937635185151}
+  - component: {fileID: 1523539609655911605}
+  - component: {fileID: 7818028755935603410}
+  m_Layer: 6
+  m_Name: GroundTouch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4971792276870881090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843275660835256068}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.718, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2877585658312796840}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7120928721351664888
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843275660835256068}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2710709168942744862
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843275660835256068}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &7415498937635185151
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843275660835256068}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1523539609655911605
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843275660835256068}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &7818028755935603410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843275660835256068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba9854b89081c745939d18cb6072adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCaracter: {fileID: 1250711279703891248}
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  Collider: {fileID: 7415498937635185151}
 --- !u!1 &7007544309314686374
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,10 +719,7 @@ GameObject:
   - component: {fileID: 2895450489561477158}
   - component: {fileID: 5304420718950057315}
   - component: {fileID: 8473641997553851311}
-  - component: {fileID: 7392367720426534537}
   - component: {fileID: 2540067866258433190}
-  - component: {fileID: 4096172378793300849}
-  - component: {fileID: 567795810785220910}
   - component: {fileID: 1035874733780036053}
   - component: {fileID: 1250711279703891248}
   - component: {fileID: 4736350082295370191}
@@ -597,6 +745,7 @@ Transform:
   m_Children:
   - {fileID: 3279033735931865826}
   - {fileID: 6085687008427749143}
+  - {fileID: 4971792276870881090}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &276680002055495338
@@ -754,132 +903,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &7392367720426534537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8548235130282511181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 793165baabc899240b7aeebb0bbf2ea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints:
-    value_current: 0
-    value_min: 0
-    value_max: 100
-    resetOnStart: 1
-    noLossEventOnEmpty: 0
-    noGainEventOnFull: 0
-    valueChange:
-      m_PersistentCalls:
-        m_Calls: []
-    valueLoss:
-      m_PersistentCalls:
-        m_Calls: []
-    value_Empty:
-      m_PersistentCalls:
-        m_Calls: []
-    valueGain:
-      m_PersistentCalls:
-        m_Calls: []
-    value_Full:
-      m_PersistentCalls:
-        m_Calls: []
-    listeners: []
-  hitInvincibilityTime: 0.5
-  hitAnimation:
-    flash:
-      hasHitFlash: 0
-      meshes: []
-      hitMaterial: {fileID: 0}
-      hitFlashTime: 0.1
-    slowDown:
-      hasSlowDown: 0
-      magnitudeCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      duration: 0.5
-    shake:
-      hasShake: 0
-      duration: 0.5
-      magnitude: 0.1
-      magnitudeCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    sound:
-      clip: {fileID: 0}
-      volume: 0
-    spawn_fromPool:
-      hasSpawn: 0
-      objectToSpawn: 
-      asChild: 0
-    spawn:
-      hasSpawn: 0
-      objectToSpawn: {fileID: 0}
-      asChild: 0
-    text:
-      hasDamageNumber: 0
-      damageNumber: {fileID: 0}
-      spawnPoint: {fileID: 0}
-      offset: {x: 0, y: 0, z: 0}
-    signal:
-      m_PersistentCalls:
-        m_Calls: []
-  defeatAnimation:
-    flash:
-      hasHitFlash: 0
-      meshes: []
-      hitMaterial: {fileID: 0}
-      hitFlashTime: 0.1
-    slowDown:
-      hasSlowDown: 0
-      magnitudeCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      duration: 0.5
-    shake:
-      hasShake: 0
-      duration: 0.5
-      magnitude: 0.1
-      magnitudeCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    sound:
-      clip: {fileID: 0}
-      volume: 0
-    spawn_fromPool:
-      hasSpawn: 0
-      objectToSpawn: 
-      asChild: 0
-    spawn:
-      hasSpawn: 0
-      objectToSpawn: {fileID: 0}
-      asChild: 0
-    text:
-      hasDamageNumber: 0
-      damageNumber: {fileID: 0}
-      spawnPoint: {fileID: 0}
-      offset: {x: 0, y: 0, z: 0}
-    signal:
-      m_PersistentCalls:
-        m_Calls: []
-  autoConnectEffectsToHealth: 1
-  destroyOnDefeat: 1
 --- !u!114 &2540067866258433190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,91 +915,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcef81298fd47cb4c8c9fdf1d60f08ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4096172378793300849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8548235130282511181}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79bb1bf49112e247938ef9eeb25d077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
---- !u!114 &567795810785220910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8548235130282511181}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d785f3d337354f1499e8bd939ed07b28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammunition:
-    value_current: 5
-    value_min: 0
-    value_max: 5
-    resetOnStart: 1
-    noLossEventOnEmpty: 0
-    noGainEventOnFull: 0
-    valueChange:
-      m_PersistentCalls:
-        m_Calls: []
-    valueLoss:
-      m_PersistentCalls:
-        m_Calls: []
-    value_Empty:
-      m_PersistentCalls:
-        m_Calls: []
-    valueGain:
-      m_PersistentCalls:
-        m_Calls: []
-    value_Full:
-      m_PersistentCalls:
-        m_Calls: []
-    listeners: []
-  reloadTime: 0.2
-  fireRate: 0.05
-  bullet:
-    hasSpawn: 1
-    objectToSpawn: Bullet
-    asChild: 0
-  shake:
-    hasShake: 0
-    duration: 0.5
-    magnitude: 3
-    magnitudeCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: -0.9722288
-        outSlope: -0.9722288
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.8999939
-        value: 0.125
-        inSlope: -0.9722288
-        outSlope: -0.9722288
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  shootSound:
-    clip: {fileID: 0}
-    volume: 0
 --- !u!114 &1035874733780036053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1001,7 +939,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518507ec97accfb4695c58a0c78b4387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  lives:
+    value_current: 5
+    value_min: 0
+    value_max: 5
+    resetOnStart: 1
+    noLossEventOnEmpty: 0
+    noGainEventOnFull: 0
+    valueChange:
+      m_PersistentCalls:
+        m_Calls: []
+    valueLoss:
+      m_PersistentCalls:
+        m_Calls: []
+    value_Empty:
+      m_PersistentCalls:
+        m_Calls: []
+    valueGain:
+      m_PersistentCalls:
+        m_Calls: []
+    value_Full:
+      m_PersistentCalls:
+        m_Calls: []
+    listeners: []
+  moveSpeed: 3000
   hitBox: {fileID: 3207735925940850721}
   hitBoxLayerMask:
     serializedVersion: 2
@@ -1039,6 +1000,8 @@ MonoBehaviour:
   soundEffectValue:
     clip: {fileID: 0}
     volume: 0
+  baseAttackCooldown: 0.5
+  healthRegen: 4
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -1090,21 +1053,52 @@ MonoBehaviour:
     - {fileID: 2895450489561477158}
     hitMaterial: {fileID: 7933299137048178034, guid: a9f670f4eae962b4683c35ae3d1db878, type: 3}
     hitFlashTime: 0.1
-  hitMultiplier: 1
+  hitMultiplier:
+    value_current: 0
+    value_min: 0
+    value_max: 300
+    resetOnStart: 0
+    noLossEventOnEmpty: 0
+    noGainEventOnFull: 0
+    valueChange:
+      m_PersistentCalls:
+        m_Calls: []
+    valueLoss:
+      m_PersistentCalls:
+        m_Calls: []
+    value_Empty:
+      m_PersistentCalls:
+        m_Calls: []
+    valueGain:
+      m_PersistentCalls:
+        m_Calls: []
+    value_Full:
+      m_PersistentCalls:
+        m_Calls: []
+    listeners: []
   BaseDamage:
     forwardForce: 100
     upForce: 10
     damage: 10
   GummiHammerDamage:
-    forwardForce: 10000
-    upForce: 100
+    forwardForce: 100
+    upForce: 10
     damage: 10
   federTime: 2
   federDamage:
     forwardForce: 100
     upForce: 100
     damage: 10
-  attackType: 1
+  damageNumberValue:
+    hasDamageNumber: 1
+    damageNumber: {fileID: 1259023133563206875, guid: b1e674f6dbf194d4ab55fdfedf32ddc6, type: 3}
+    spawnPoint: {fileID: 0}
+    offset: {x: 0, y: 0, z: 0}
+  attackType: 0
+  groundedDrag: 5
+  airDrag: 0.2
+  animator: {fileID: 0}
+  hand: {fileID: 0}
 --- !u!136 &4736350082295370191
 CapsuleCollider:
   m_ObjectHideFlags: 0
