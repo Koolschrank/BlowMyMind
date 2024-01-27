@@ -1,53 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
-public class DefaultItem : Item.Item
+namespace Item
 {
-    public override void Initialize(PlayerCaracter player)
+    public class DefaultItem : Item
     {
-        throw new System.NotImplementedException();
-    }
-
-    public override void Use()
-    {
-        // add force to everything in the hitbox
-        Collider[] colliders = Physics.OverlapBox(hitBox.bounds.center, hitBox.bounds.extents, hitBox.transform.rotation, hitBoxLayerMask);
-        Debug.Log(colliders.Length);
-        foreach (Collider nearbyObject in colliders)
+        [SerializeField] private HitData hitData;
+        [SerializeField] private float coolDownTime;
+        
+        public override void Initialize(PlayerCharacter player)
         {
-            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if (rb == null)
-            {
-                continue;
-            }
-            // if rb is this rb, skip
-            if (rb == this.rb)
-            {
-                continue;
-            }
-            if (rb != null)
-            {
-                //rb.AddForce(transform.forward * pushForwadForce);
-                //rb.AddForce(transform.up * pushupForce);
-                // slow down value
-                slowDownValue.Play();
-                // sound effect value
-                soundEffectValue.Play();
-                // unity event in not empty
-                if (OnAttack != null)
-                {
-                    OnAttack.Invoke();
-                }
-                // if other rb has a playerCharacter component
-                PlayerCaracter playerCaracter = rb.GetComponent<PlayerCaracter>();
-                if (playerCaracter != null)
-                {
-                    Vector3  power = transform.forward * BaseDamage.ForwardForce + transform.up * BaseDamage.UpForce;
-                    // take damage
-                    playerCaracter.TakeDamage(power, BaseDamage);
-                }
-            }
+            throw new System.NotImplementedException();
+        }
+
+        public override void Use()
+        {
+            Invoke(nameof(FinishUse), coolDownTime);
+        }
+
+        public override void Impact(Collider collider)
+        {
+            if (!collider.TryGetComponent(out PlayerCharacter nearbyPlayer))
+                return;
+                
+            if(nearbyPlayer == Player)
+                return;
+                
+            Vector3  power = transform.forward * hitData.ForwardForce + transform.up * hitData.UpForce;
+            nearbyPlayer.TakeDamage(power, hitData);
+                
+            hitData.ActivateEffects();
+        }
+        
+        private void FinishUse()
+        {
+            InUse = false;
+            UseCompleted?.Invoke();
+            Depleted?.Invoke();
         }
     }
 }

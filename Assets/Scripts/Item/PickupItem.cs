@@ -1,26 +1,30 @@
+using Player;
 using UnityEngine;
 
 namespace Item
 {
     public abstract class PickupItem : MonoBehaviour
     {
+        [SerializeField] private Item item;
+        
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out PlayerCaracter player))
+            if (other.TryGetComponent(out PlayerCharacter player))
             {
                 OnCollected(player);
             }
         }
 
-        protected virtual void OnCollected(PlayerCaracter player)
+        protected virtual void OnCollected(PlayerCharacter player)
         {
-            //other.GetComponent<PlayerCaracter>().ItemPickUp(itemInt);
+            player.PickUpItem(item);
             DestroyItem();
         }
     
         public void DestroyItem()
         {
             Destroy(gameObject);
+            
         }
     }
 }

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GroundCheck : MonoBehaviour
 {
-    public PlayerCaracter playerCaracter;
+    public PlayerCharacter playerCharacter;
     public LayerMask groundLayerMask;
     public Collider Collider;
    
@@ -15,11 +17,11 @@ public class GroundCheck : MonoBehaviour
         if (IsGrounded())
         {
             // set grounded to true
-            playerCaracter.SetGrounded(true);
+            playerCharacter.SetGrounded(true);
         }
         else
         {
-            playerCaracter.SetGrounded(false);
+            playerCharacter.SetGrounded(false);
         }
     }
 

@@ -1,5 +1,5 @@
 using System;
-
+using Player;
 using UnityEngine;
 
 public class DeathZoneCollider : MonoBehaviour
@@ -12,7 +12,7 @@ public class DeathZoneCollider : MonoBehaviour
 
 
         // check if other is playercaracter
-        var playerCaracter = other.GetComponent<PlayerCaracter>();
+        var playerCaracter = other.GetComponent<PlayerCharacter>();
         if (playerCaracter != null)
         {
             // call triggered event
