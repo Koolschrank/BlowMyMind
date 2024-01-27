@@ -86,6 +86,7 @@ public class ObjectPooler : MonoBehaviour
 
     void Start()
     {
+        return;
         poolDictionary = new Dictionary<string, Pool>();
 
         // Create and initialize the pools
