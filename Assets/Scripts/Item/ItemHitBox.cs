@@ -14,6 +14,8 @@ namespace Item
 
         private void OnTriggerEnter(Collider other)
         {
+            // ddebug
+            Debug.Log("Item hit box trigger enter");
             _item.Impact(other);
         }
     }

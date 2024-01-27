@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7541824060669021125}
   - component: {fileID: 8000981228760322846}
   - component: {fileID: 9067215562171490591}
-  - component: {fileID: 1486281356837215894}
+  - component: {fileID: 2907625392558587515}
   m_Layer: 0
-  m_Name: ThrowableItem
+  m_Name: ThrowablePickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1486281356837215894
+--- !u!114 &2907625392558587515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,9 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 508886246796995541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ac09b4f81cd9d47b7fbfc42fe4a254, type: 3}
+  m_Script: {fileID: 11500000, guid: b26e4e607029f8a4e914bb7df6a212f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDownTime: 0.5
-  projectilePrefab: {fileID: 508886246796995541, guid: fe6c59b00c81dd741ac70bcf03369116, type: 3}
-  throwForce: 2
+  item: {fileID: 1486281356837215894, guid: 9a2f941f69bd1c146be5447fe16595e8, type: 3}
