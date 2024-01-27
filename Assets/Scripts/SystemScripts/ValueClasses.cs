@@ -197,6 +197,12 @@ public class DamageNumberValue
         Play(damage.DamageValue);
     }
 
+    public void Play(Transform transform)
+    {
+        if (!hasDamageNumber) return;
+        damageNumber.Spawn(transform.position + offset, "Haha");
+    }
+
     public void Play(float damage)
     {
         if (!hasDamageNumber) return;
