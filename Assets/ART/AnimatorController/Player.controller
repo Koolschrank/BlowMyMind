@@ -226,7 +226,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: metarig_Idle 1
-  m_Speed: 5
+  m_Speed: 4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5234905844173179387}
@@ -240,7 +240,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: aae05b5fccc29f942abeed6154023721, type: 2}
+  m_Motion: {fileID: -8945691123924629249, guid: 5c0669bd66f517143b7f3a11cbd9c17e, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
