@@ -132,9 +132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownTime: 0.5
   hitData:
-    forwardForce: 100
+    forwardForce: 200
     upForce: 100
-    damage: 10
+    damage: 5
   hitBox: {fileID: 4555138265921317225}
 --- !u!1001 &8070292730105914322
 PrefabInstance:

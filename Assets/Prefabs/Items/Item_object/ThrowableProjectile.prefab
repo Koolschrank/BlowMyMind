@@ -204,6 +204,10 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   throwableProjectile_Parent: {fileID: 7985483776885508358}
+  hitData:
+    forwardForce: 100
+    upForce: 100
+    damage: 20
 --- !u!1001 &5428399715261703275
 PrefabInstance:
   m_ObjectHideFlags: 0

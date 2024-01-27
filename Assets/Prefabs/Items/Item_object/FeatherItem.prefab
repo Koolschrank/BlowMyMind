@@ -132,8 +132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownTime: 0.5
   hitData:
-    forwardForce: 100
-    upForce: 100
+    forwardForce: 0
+    upForce: 0
     damage: 10
   hitBox: {fileID: 4555138265921317225}
 --- !u!1001 &3375588348805510733
