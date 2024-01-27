@@ -9,43 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eba075a618bd4c7d96585fe2e026f8a, type: 3}
+  m_Script: {fileID: 0}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  knockBackFactorByDamage:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0.01902771
-      value: 0.4954834
-      inSlope: 0.060986936
-      outSlope: 0.060986936
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.09420862
-    - serializedVersion: 3
-      time: 5.043977
-      value: 2.992356
-      inSlope: 0.49563035
-      outSlope: 0.49563035
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.18153721
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  maxDamage: 5
-  baseAttackData:
-    forwardForce: 50
-    upForce: 20
-    damage: 0
-  hammerData:
-    forwardForce: 100
-    upForce: 20
-    damage: 5
-  featherData:
-    forwardForce: 20
-    upForce: 20
-    damage: 10

@@ -84,7 +84,7 @@ namespace SystemScripts
 
             foreach (var listener in healthListener)
             {
-                playerMove.hitMultiplier.AddListener(listener);
+                playerMove.knockBackMultiplier.AddListener(listener);
             }
         }
     }

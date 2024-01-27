@@ -13,9 +13,9 @@ public class LaughParticles : MonoBehaviour
         _particleSystem = GetComponent<ParticleSystem>();
     }
 
-    void _OnDamageChanged(float newDamage)
+    public void OnDamageChanged(FloatValue newDamage)
     {
         var emission = _particleSystem.emission;
-        emission.rateOverTime = emissionByDamage.Evaluate(newDamage);
+        emission.rateOverTime = emissionByDamage.Evaluate(newDamage.Value);
     }
 }
