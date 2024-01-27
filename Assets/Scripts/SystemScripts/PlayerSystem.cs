@@ -80,7 +80,7 @@ namespace SystemScripts
                     playerToWin = playerObj;
                 }
             }
-            if (alivePlayers <= 1)
+            if (alivePlayers == 1)
             { 
                 PlayerWin(playerToWin);
                 return true;
