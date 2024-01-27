@@ -3451,6 +3451,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 188576632589700030}
+  isFaceRandomized: 1
+  availableFaces:
+  - {fileID: 11400000, guid: 457b81f3a5e1e43c983671669cd6d15a, type: 2}
+  - {fileID: 11400000, guid: 52dce004c7c1b43dcbfcc999d7c076e4, type: 2}
+  - {fileID: 11400000, guid: 6545ceae8f83749d082bd391083f608a, type: 2}
+  - {fileID: 11400000, guid: bea477860b069414faf9df01d9132614, type: 2}
+  bodyMesh: {fileID: 7852606779742955613}
   lives:
     value_current: 5
     value_min: 0
@@ -3476,6 +3483,7 @@ MonoBehaviour:
     listeners: []
   moveSpeed: 3000
   defaultItem: {fileID: -4497055413326994457, guid: 5c9302916c628b549a85f9e234b3e9b6, type: 3}
+  _currentItem: {fileID: 0}
   healthRegen: 4
   OnTakeDamage:
     m_PersistentCalls:

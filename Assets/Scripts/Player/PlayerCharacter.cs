@@ -1,14 +1,21 @@
+using System;
+using System.Collections.Generic;
 using Item;
 using SystemScripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace Player
 {
     public class PlayerCharacter : MonoBehaviour
     {
         public Transform body;
+        public bool isFaceRandomized = true;
+        public bool isFaceRandomizedOnDeath = true;
+        public List<FaceData> availableFaces;
+        [SerializeField] private SkinnedMeshRenderer bodyMesh;
         public FloatValue lives;
         Rigidbody rb;
         public float moveSpeed = 10f;
@@ -59,7 +66,35 @@ namespace Player
                 
                 rb.drag = airDrag;
             }
-    
+        }
+
+        private void Awake()
+        {
+            knockBackMultiplier.onValueChange += laughParticles.OnDamageChanged;
+            // PlayerSystem.instance.AddPlayer(gameObject);
+            rb = GetComponent<Rigidbody>();
+            hitFlashValue.SetUpHitFlash();
+            PickUpItem(defaultItem);
+
+            if (isFaceRandomized)
+            {
+                SetFaceMaterials(availableFaces[Random.Range(0, availableFaces.Count)]);
+            }
+        }
+
+        private void SetFaceMaterials(FaceData faceData)
+        {
+            var materials = bodyMesh.materials;
+            materials[0] = faceData.skinMaterial;
+            materials[1] = faceData.faceMaterial;
+            materials[4] = faceData.hairMaterial;
+            bodyMesh.materials = materials;
+            Debug.Log("Materials set!");
+        }
+        
+        private void Start()
+        {
+            laughParticles.OnDamageChanged(knockBackMultiplier);
         }
 
         public void EnableItemHitBox()
@@ -91,18 +126,7 @@ namespace Player
             // set rotation to hand
             objectToSet.transform.localRotation = Quaternion.identity;
         }
-
-        private void Awake()
-        {
-            knockBackMultiplier.onValueChange += laughParticles.OnDamageChanged;
-            // PlayerSystem.instance.AddPlayer(gameObject);
-            rb = GetComponent<Rigidbody>();
-
-            
-            hitFlashValue.SetUpHitFlash();
-            PickUpItem(defaultItem);
-        }
-
+        
         // Update is called once per frame
         void Update()
         {
@@ -155,7 +179,7 @@ namespace Player
 
         public void TakeDamage(Vector3 power,Item.HitData hitData)
         {
-            Debug.Log("Damage " +hitData.Damage);
+            Debug.Log("Damage " + hitData.Damage);
             // debug Knockback
             Debug.Log("Knockback " + knockBackMultiplier.Value);
             knockBackMultiplier.Value = knockBackMultiplier.Value + hitData.Damage;
@@ -241,6 +265,10 @@ namespace Player
             Debug.Log("Player died!");
             // destroy game object
             PlayerSystem.instance.Respawn(gameObject);
+            if (isFaceRandomizedOnDeath)
+            {
+                SetFaceMaterials(availableFaces[Random.Range(0, availableFaces.Count)]);
+            }
             rb.velocity = Vector3.zero;
 
             knockBackMultiplier.SubtractValue(100000);
