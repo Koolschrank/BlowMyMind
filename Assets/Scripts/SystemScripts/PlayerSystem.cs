@@ -11,10 +11,15 @@ public class PlayerSystem : MonoBehaviour
     [SerializeField] PlayerConnector[] playerConnectors;
     List<GameObject> players = new List<GameObject>();
 
+
     private void Awake()
     {
         instance = this;
     }
+
+    
+
+
 
     // get players
     public List<GameObject> GetPlayers()
@@ -46,9 +51,9 @@ public class PlayerSystem : MonoBehaviour
     public void AddPlayer(GameObject newPlayer)
     {
         // random position
-        Vector3 pos = new Vector3(UnityEngine.Random.Range(minPlayerSpawnPosition.x, maxPlayerSpawnPosition.x), UnityEngine.Random.Range(minPlayerSpawnPosition.y, maxPlayerSpawnPosition.y), UnityEngine.Random.Range(minPlayerSpawnPosition.z, maxPlayerSpawnPosition.z));
-        newPlayer.transform.position = pos;
-        
+        Respawn(newPlayer);
+
+
         if (players.Count >= playerConnectors.Length)
         {
             return;
@@ -57,21 +62,35 @@ public class PlayerSystem : MonoBehaviour
         players.Add(newPlayer);
 
     }
+
+    public void Respawn(GameObject playerToReSpawn)
+    {
+        Vector3 pos = new Vector3(UnityEngine.Random.Range(minPlayerSpawnPosition.x, maxPlayerSpawnPosition.x), UnityEngine.Random.Range(minPlayerSpawnPosition.y, maxPlayerSpawnPosition.y), UnityEngine.Random.Range(minPlayerSpawnPosition.z, maxPlayerSpawnPosition.z));
+        playerToReSpawn.transform.position = pos;
+
+    }
 }
 
 [Serializable]
 public class PlayerConnector
 {
     [SerializeField] ActionListener[] ammoListener;
-
+    [SerializeField] ActionListener[] healthListener;
 
     public void ConnectListenersToPlayer(GameObject player)
     {
-        PlayerShoot playerShoot = player.GetComponent<PlayerShoot>();
+        PlayerCaracter playerMove = player.GetComponent<PlayerCaracter>();
         foreach (var listener in ammoListener)
         {
-            playerShoot.Ammunition.AddListener(listener);
+            playerMove.lives.AddListener(listener);
         }
+
+        foreach (var listener in healthListener)
+        {
+            playerMove.hitMultiplier.AddListener(listener);
+        }
+
+
         
     }
 }

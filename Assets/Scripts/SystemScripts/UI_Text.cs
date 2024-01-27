@@ -27,13 +27,16 @@ public class UI_Text : ActionListener
         UpdateValue(floatValue);
     }
 
+    float lastValue = -1;
     public override void UpdateValue(FloatValue value)
     {
         if (text == null) { text = GetComponent<TextMeshProUGUI>(); }
         switch (textInfo)
         {
             case TextInfo.value:
-                text.text = value.Value.ToString();
+                //text.text = value.Value.ToString();
+                // show value as int 
+                text.text = Mathf.RoundToInt(value.Value).ToString();
                 break;
             case TextInfo.value_and_max:
                 text.text = value.Value.ToString() + " / " + value.Value_max.ToString();
@@ -44,7 +47,14 @@ public class UI_Text : ActionListener
             default:
                 break;
         }
-        base.UpdateValue(value);
+        if (lastValue < value.Value)
+        {
+            base.UpdateValue(value);
+        }
+
+        
+        lastValue = value.Value;
+        
     }
 
     enum TextInfo

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -7,6 +8,7 @@ using VHierarchy.Libs;
 
 public class PlayerCaracter : MonoBehaviour
 {
+    public FloatValue lives;
     Rigidbody rb;
     public float moveSpeed = 10f;
     public Collider hitBox;
@@ -16,6 +18,12 @@ public class PlayerCaracter : MonoBehaviour
     public UnityEngine.Events.UnityEvent OnAttack;
     public SlowDownValue slowDownValue;
     public SoundEffectValue soundEffectValue;
+
+    public float baseAttackCooldown = 0.5f;
+    float cooldown = 0f;
+
+    public float healthRegen = 1f;
+    
 
 
     // unity event for taking damage
@@ -27,7 +35,7 @@ public class PlayerCaracter : MonoBehaviour
 
     public HitFlashValue hitFlashValue;
 
-    public float hitMultiplier = 1f;
+    public FloatValue hitMultiplier;
     public HitData BaseDamage;
     public HitData GummiHammerDamage;
 
@@ -35,16 +43,38 @@ public class PlayerCaracter : MonoBehaviour
     public float federTime=2f;
     float federTimeCounter = 0f;
     public HitData federDamage;
+    public DamageNumberValue damageNumberValue;
 
     public int attackType = 0;
 
+    public float groundedDrag = 1f;
+    public float airDrag = 0f;
 
 
-
+    public Animator animator;
+    public Transform hand;
+    public float velocityToWalk = 0.1f;
+    bool isGrounded = false;
+    public void SetGrounded(bool grounded)
+    { 
+        if (grounded)
+        {
+            isGrounded = true;
+            Debug.Log("grounded");
+            rb.drag = groundedDrag;
+        }
+        else
+        {
+            isGrounded = false;
+            Debug.Log("not grounded");
+            rb.drag = airDrag;
+        }
+    
+    }
 
     private void Awake()
     {
-        PlayerSystem.instance.AddPlayer(gameObject);
+       // PlayerSystem.instance.AddPlayer(gameObject);
         rb = GetComponent<Rigidbody>();
 
         hitFlashValue.SetUpHitFlash();
@@ -54,22 +84,36 @@ public class PlayerCaracter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hitMultiplier.Value -= Time.deltaTime * healthRegen;
+        
+        cooldown -= Time.deltaTime;
         hitFlashValue.UpdateHitFlash(Time.deltaTime);
         MoveUpdate(Time.deltaTime);
+
     }
 
 
     public void MoveUpdate(float delta)
     {
+        if (!isGrounded) return;
 
         Vector3 movementDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
-        rb.AddForce(movementDirection * movePower * moveSpeed);
+        rb.AddForce(movementDirection * movePower * moveSpeed * delta);
 
         // rotate to face direction of movement
         if (movementDirection != Vector3.zero)
         {
             transform.rotation = Quaternion.LookRotation(movementDirection);
         }
+        if (movePower > velocityToWalk)
+        {
+            animator.SetBool("Walking", true);
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
+        }
+
     }
 
     Vector2 moveInput;
@@ -92,8 +136,8 @@ public class PlayerCaracter : MonoBehaviour
     public void TakeDamage(Vector3 power,HitData hitData)
     {
 
-        hitMultiplier += hitData.Damage;
-        rb.AddForce(power * hitMultiplier);
+        hitMultiplier.Value += hitData.Damage;
+        rb.AddForce(power * hitMultiplier.Value);
         TakeDamage();
     }
 
@@ -101,6 +145,9 @@ public class PlayerCaracter : MonoBehaviour
 
     public void Action()
     {
+        if (cooldown > 0f) return;
+
+        animator.SetTrigger("Attack");
         switch (attackType)
         {
             case 0:
@@ -117,7 +164,7 @@ public class PlayerCaracter : MonoBehaviour
             default:
                 break;
         }
-
+        cooldown = baseAttackCooldown;
     }
 
     public void LoseItem()
@@ -277,6 +324,7 @@ public class PlayerCaracter : MonoBehaviour
             OnTakeDamage.Invoke();
         }
         hitFlashValue.StartHitFlash();
+        damageNumberValue.Play(transform);
     }
 
     public void MoveInput(Vector2 direction)
@@ -292,7 +340,19 @@ public class PlayerCaracter : MonoBehaviour
 
 
 
+    public void Die()
+    {
+        Debug.Log("Player died!");
+        // destroy game object
+        PlayerSystem.instance.Respawn(gameObject);
+        rb.velocity = Vector3.zero;
 
+        hitMultiplier.Value = 0f;
+
+        lives.Value -= 1f;
+
+
+    }
 }
 
 
