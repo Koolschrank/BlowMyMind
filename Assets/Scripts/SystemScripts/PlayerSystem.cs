@@ -66,6 +66,34 @@ namespace SystemScripts
             playerToReSpawn.transform.position = pos;
 
         }
+
+        public bool CheckForWinner()
+        {
+            PlayerCharacter playerToWin = null;
+            int alivePlayers = 0;
+            foreach (var player in players)
+            {
+                var playerObj = player.GetComponent<PlayerCharacter>();
+                if (playerObj.lives.Value >0)
+                {
+                    alivePlayers++;
+                    playerToWin = playerObj;
+                }
+            }
+            if (alivePlayers <= 1)
+            { 
+                PlayerWin(playerToWin);
+                return true;
+            }
+
+            return false;
+        }
+
+        public void PlayerWin(PlayerCharacter playerToWin)
+        {
+            // debug log
+            Debug.Log("Player " + playerToWin.name + " wins!");
+        }
     }
 
     [Serializable]
@@ -84,8 +112,10 @@ namespace SystemScripts
 
             foreach (var listener in healthListener)
             {
-                playerMove.hitMultiplier.AddListener(listener);
+                playerMove.knockBackMultiplier.AddListener(listener);
             }
         }
     }
+
+    
 }

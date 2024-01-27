@@ -2,6 +2,7 @@ using Item;
 using SystemScripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace Player
 {
@@ -16,7 +17,7 @@ namespace Player
         
         [SerializeField] private Item.Item defaultItem;
         
-        private Item.Item _currentItem;
+        public Item.Item _currentItem;
 
         public float healthRegen = 1f;
     
@@ -31,10 +32,11 @@ namespace Player
 
         public HitFlashValue hitFlashValue;
 
-        public FloatValue hitMultiplier;
+        [FormerlySerializedAs("hitMultiplier")] public FloatValue knockBackMultiplier;
         
         public DamageNumberValue damageNumberValue;
-
+        [SerializeField] private LaughParticles laughParticles;
+        
         public float groundedDrag = 1f;
         public float airDrag = 0f;
 
@@ -48,16 +50,36 @@ namespace Player
             if (grounded)
             {
                 isGrounded = true;
-                Debug.Log("grounded");
+                
                 rb.drag = groundedDrag;
             }
             else
             {
                 isGrounded = false;
-                Debug.Log("not grounded");
+                
                 rb.drag = airDrag;
             }
     
+        }
+
+        public void EnableItemHitBox()
+        {
+            _currentItem.EnableHitBox();
+        }
+
+        public void DisableItemHitBox()
+        {
+            _currentItem.DisableHitBox();
+        }
+
+        public void ThrowItem()
+        {
+            _currentItem.Throw();
+        }
+
+        public Transform GetBody()
+        {
+            return body;
         }
 
         public void SetObjectToHand(Item.Item objectToSet)
@@ -72,6 +94,7 @@ namespace Player
 
         private void Awake()
         {
+            knockBackMultiplier.onValueChange += laughParticles.OnDamageChanged;
             // PlayerSystem.instance.AddPlayer(gameObject);
             rb = GetComponent<Rigidbody>();
 
@@ -83,7 +106,7 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
-            hitMultiplier.Value -= Time.deltaTime * healthRegen;
+            //knockBackMultiplier.Value -= Time.deltaTime * healthRegen;
             
             hitFlashValue.UpdateHitFlash(Time.deltaTime);
             MoveUpdate(Time.deltaTime);
@@ -132,9 +155,12 @@ namespace Player
 
         public void TakeDamage(Vector3 power,Item.HitData hitData)
         {
-
-            hitMultiplier.Value += hitData.Damage;
-            rb.AddForce(power * hitMultiplier.Value);
+            Debug.Log("Damage " +hitData.Damage);
+            // debug Knockback
+            Debug.Log("Knockback " + knockBackMultiplier.Value);
+            knockBackMultiplier.Value = knockBackMultiplier.Value + hitData.Damage;
+            Debug.Log("Knockback 2" + knockBackMultiplier.Value);
+            rb.AddForce(power * knockBackMultiplier.Value);
             TakeDamage();
         }
 
@@ -162,8 +188,8 @@ namespace Player
 
         private void LoseItem()
         {
-            _currentItem = defaultItem;
-            _currentItem.Initialize(this);
+            PickUpItem(defaultItem);
+         
         }
 
         public void TakeDamage()
@@ -201,14 +227,19 @@ namespace Player
 
         public void Die()
         {
+            knockBackMultiplier.Value -= 1000f;
             Debug.Log("Player died!");
             // destroy game object
             PlayerSystem.instance.Respawn(gameObject);
             rb.velocity = Vector3.zero;
 
-            hitMultiplier.Value = 0f;
+            knockBackMultiplier.SubtractValue(100000);
+            
 
             lives.Value -= 1f;
+
+            PlayerSystem.instance.CheckForWinner();
+
         }
     }
 }
