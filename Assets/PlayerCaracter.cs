@@ -28,7 +28,6 @@ public class PlayerCaracter : MonoBehaviour
     public HitFlashValue hitFlashValue;
 
     public float hitMultiplier = 1f;
-    public float hitMultiplierGainPerHit = 0.1f;
     public HitData hitData;
 
 
