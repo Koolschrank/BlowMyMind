@@ -7,6 +7,7 @@ using VHierarchy.Libs;
 
 public class PlayerCaracter : MonoBehaviour
 {
+    public FloatValue lives;
     Rigidbody rb;
     public float moveSpeed = 10f;
     public Collider hitBox;
@@ -62,7 +63,7 @@ public class PlayerCaracter : MonoBehaviour
 
     private void Awake()
     {
-        PlayerSystem.instance.AddPlayer(gameObject);
+       // PlayerSystem.instance.AddPlayer(gameObject);
         rb = GetComponent<Rigidbody>();
 
         hitFlashValue.SetUpHitFlash();
@@ -319,6 +320,8 @@ public class PlayerCaracter : MonoBehaviour
         rb.velocity = Vector3.zero;
 
         hitMultiplier = 1f;
+
+        lives.Value -= 1f;
 
 
     }

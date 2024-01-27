@@ -11,10 +11,15 @@ public class PlayerSystem : MonoBehaviour
     [SerializeField] PlayerConnector[] playerConnectors;
     List<GameObject> players = new List<GameObject>();
 
+
     private void Awake()
     {
         instance = this;
     }
+
+    
+
+
 
     // get players
     public List<GameObject> GetPlayers()
@@ -74,10 +79,10 @@ public class PlayerConnector
 
     public void ConnectListenersToPlayer(GameObject player)
     {
-        PlayerShoot playerShoot = player.GetComponent<PlayerShoot>();
+        PlayerCaracter playerMove = player.GetComponent<PlayerCaracter>();
         foreach (var listener in ammoListener)
         {
-            playerShoot.Ammunition.AddListener(listener);
+            playerMove.lives.AddListener(listener);
         }
         
     }

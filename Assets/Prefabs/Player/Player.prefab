@@ -721,8 +721,6 @@ GameObject:
   - component: {fileID: 8473641997553851311}
   - component: {fileID: 7392367720426534537}
   - component: {fileID: 2540067866258433190}
-  - component: {fileID: 4096172378793300849}
-  - component: {fileID: 567795810785220910}
   - component: {fileID: 1035874733780036053}
   - component: {fileID: 1250711279703891248}
   - component: {fileID: 4736350082295370191}
@@ -1044,91 +1042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcef81298fd47cb4c8c9fdf1d60f08ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4096172378793300849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8548235130282511181}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79bb1bf49112e247938ef9eeb25d077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
---- !u!114 &567795810785220910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8548235130282511181}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d785f3d337354f1499e8bd939ed07b28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammunition:
-    value_current: 5
-    value_min: 0
-    value_max: 5
-    resetOnStart: 1
-    noLossEventOnEmpty: 0
-    noGainEventOnFull: 0
-    valueChange:
-      m_PersistentCalls:
-        m_Calls: []
-    valueLoss:
-      m_PersistentCalls:
-        m_Calls: []
-    value_Empty:
-      m_PersistentCalls:
-        m_Calls: []
-    valueGain:
-      m_PersistentCalls:
-        m_Calls: []
-    value_Full:
-      m_PersistentCalls:
-        m_Calls: []
-    listeners: []
-  reloadTime: 0.2
-  fireRate: 0.05
-  bullet:
-    hasSpawn: 1
-    objectToSpawn: Bullet
-    asChild: 0
-  shake:
-    hasShake: 0
-    duration: 0.5
-    magnitude: 3
-    magnitudeCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: -0.9722288
-        outSlope: -0.9722288
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.8999939
-        value: 0.125
-        inSlope: -0.9722288
-        outSlope: -0.9722288
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  shootSound:
-    clip: {fileID: 0}
-    volume: 0
 --- !u!114 &1035874733780036053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,6 +1066,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518507ec97accfb4695c58a0c78b4387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives:
+    value_current: 5
+    value_min: 0
+    value_max: 5
+    resetOnStart: 1
+    noLossEventOnEmpty: 0
+    noGainEventOnFull: 0
+    valueChange:
+      m_PersistentCalls:
+        m_Calls: []
+    valueLoss:
+      m_PersistentCalls:
+        m_Calls: []
+    value_Empty:
+      m_PersistentCalls:
+        m_Calls: []
+    valueGain:
+      m_PersistentCalls:
+        m_Calls: []
+    value_Full:
+      m_PersistentCalls:
+        m_Calls: []
+    listeners: []
   moveSpeed: 50
   hitBox: {fileID: 3207735925940850721}
   hitBoxLayerMask:
