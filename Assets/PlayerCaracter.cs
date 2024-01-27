@@ -28,7 +28,18 @@ public class PlayerCaracter : MonoBehaviour
     public HitFlashValue hitFlashValue;
 
     public float hitMultiplier = 1f;
-    public HitData hitData;
+    public HitData BaseDamage;
+    public HitData GummiHammerDamage;
+
+
+    public float federTime=2f;
+    float federTimeCounter = 0f;
+    public HitData federDamage;
+
+    public int attackType = 0;
+
+
+
 
 
     private void Awake()
@@ -73,7 +84,7 @@ public class PlayerCaracter : MonoBehaviour
     {
         if (context.performed)
         {
-            Attack();
+            BaseAttack();
         }
     }
 
@@ -85,7 +96,26 @@ public class PlayerCaracter : MonoBehaviour
         TakeDamage();
     }
 
-    public void Attack()
+    public void Action()
+    {
+        switch (attackType)
+        {
+            case 0:
+                BaseAttack();
+                break;
+            case 1:
+                FederAttack();
+                break;
+            case 2:
+                GummiHammerAttack();
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    public void BaseAttack()
     {
         // debug
         
@@ -122,9 +152,9 @@ public class PlayerCaracter : MonoBehaviour
                 PlayerCaracter playerCaracter = rb.GetComponent<PlayerCaracter>();
                 if (playerCaracter != null)
                 {
-                    Vector3  power = transform.forward * hitData.ForwardForce + transform.up * hitData.UpForce;
+                    Vector3  power = transform.forward * BaseDamage.ForwardForce + transform.up * BaseDamage.UpForce;
                     // take damage
-                    playerCaracter.TakeDamage(power, hitData);
+                    playerCaracter.TakeDamage(power, BaseDamage);
 
 
                 }
@@ -132,6 +162,98 @@ public class PlayerCaracter : MonoBehaviour
             }
         }
     }
+
+    // feder attack
+    public void FederAttack()
+    {
+        // debug
+        Debug.Log("feder attack");
+        // add forece to everything in the hitbox
+        Collider[] colliders = Physics.OverlapBox(hitBox.bounds.center, hitBox.bounds.extents, hitBox.transform.rotation, hitBoxLayerMask);
+        Debug.Log(colliders.Length);
+        foreach (Collider nearbyObject in colliders)
+        {
+
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if (rb == null)
+            {
+                continue;
+            }
+            // if rb is this rb, skip
+            if (rb == this.rb)
+            {
+                continue;
+            }
+            if (rb != null)
+            {
+                //rb.AddForce(transform.forward * pushForwadForce);
+                //rb.AddForce(transform.up * pushupForce);
+                // slow down value
+                slowDownValue.Play();
+                // sound effect value
+                soundEffectValue.Play();
+                // unity event in not empty
+                if (OnAttack != null)
+                {
+                    OnAttack.Invoke();
+                }
+                // if other rb has a playerCharacter component
+                PlayerCaracter playerCaracter = rb.GetComponent<PlayerCaracter>();
+                if (playerCaracter != null)
+                {
+                    Vector3 power = transform.forward * federDamage.ForwardForce + transform.up * federDamage.UpForce;
+                    // take damage
+                    playerCaracter.TakeDamage(power, federDamage);
+                }
+            }
+        }
+    }
+
+    // gummi hammer attack
+    public void GummiHammerAttack()
+    {
+        // debug
+        Debug.Log("gummi hammer attack");
+        // add forece to everything in the hitbox
+        Collider[] colliders = Physics.OverlapBox(hitBox.bounds.center, hitBox.bounds.extents, hitBox.transform.rotation, hitBoxLayerMask);
+        Debug.Log(colliders.Length);
+        foreach (Collider nearbyObject in colliders)
+        {
+
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if (rb == null)
+            {
+                continue;
+            }
+            // if rb is this rb, skip
+            if (rb == this.rb)
+            {
+                continue;
+            }
+            if (rb != null)
+            {
+                //rb.AddForce(transform.forward * pushForwadForce);
+                //rb.AddForce(transform.up * pushupForce);
+                // slow down value
+                slowDownValue.Play();
+                // sound effect value
+                soundEffectValue.Play();
+                // unity event in not empty
+                if (OnAttack != null)
+                {
+                    OnAttack.Invoke();
+                }
+                // if other rb has a playerCharacter component
+                PlayerCaracter playerCaracter = rb.GetComponent<PlayerCaracter>();
+                if (playerCaracter != null)
+                {
+                    Vector3 power = transform.forward * GummiHammerDamage.ForwardForce + transform.up * GummiHammerDamage.UpForce;
+                    // take damage
+                    playerCaracter.TakeDamage(power, GummiHammerDamage);
+                }
+            }
+        }
+    }   
 
     public void TakeDamage()
     {
@@ -151,6 +273,11 @@ public class PlayerCaracter : MonoBehaviour
     {
         moveInput = direction;
         movePower = moveInput.magnitude;
+    }
+
+    public void ItemPickUp(int type)
+    {
+        attackType = type;
     }
 
 

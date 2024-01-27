@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 4922190286754340213}
   - component: {fileID: 3207735925940850721}
   m_Layer: 6
-  m_Name: Sphere
+  m_Name: BaseHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1091,11 +1091,20 @@ MonoBehaviour:
     hitMaterial: {fileID: 7933299137048178034, guid: a9f670f4eae962b4683c35ae3d1db878, type: 3}
     hitFlashTime: 0.1
   hitMultiplier: 1
-  hitMultiplierGainPerHit: 1
-  hitData:
-    forwardForce: 1000
+  BaseDamage:
+    forwardForce: 100
+    upForce: 10
+    damage: 10
+  GummiHammerDamage:
+    forwardForce: 10000
     upForce: 100
-    damage: 1
+    damage: 10
+  federTime: 2
+  federDamage:
+    forwardForce: 100
+    upForce: 100
+    damage: 10
+  attackType: 1
 --- !u!136 &4736350082295370191
 CapsuleCollider:
   m_ObjectHideFlags: 0
