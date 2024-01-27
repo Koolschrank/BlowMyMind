@@ -9,16 +9,16 @@ public class PlayerStats : ScriptableObject
    [SerializeField] private AnimationCurve knockBackFactorByDamage;
    public float maxDamage = 5.0f;
 
-   public DamageData baseAttackData;
-   public DamageData hammerData;
-   public DamageData featherData;
+   public HitData baseAttackData;
+   public HitData hammerData;
+   public HitData featherData;
    
    public float GetKnockBackFactorByDamage(float damage)
    {
       return knockBackFactorByDamage.Evaluate(damage);
    }
 
-   public DamageData GetDamageDataById(int id)
+   public HitData GetDamageDataById(int id)
    {
       return id switch
       {

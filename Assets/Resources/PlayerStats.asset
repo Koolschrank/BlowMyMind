@@ -14,7 +14,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockBackFactorByDamage:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.01902771
+      value: 0.4954834
+      inSlope: 0.060986936
+      outSlope: 0.060986936
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.09420862
+    - serializedVersion: 3
+      time: 5.043977
+      value: 2.992356
+      inSlope: 0.49563035
+      outSlope: 0.49563035
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.18153721
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  maxDamage: 5
+  baseAttackData:
+    forwardForce: 100
+    upForce: 100
+    damage: 10
+  hammerData:
+    forwardForce: 100
+    upForce: 100
+    damage: 10
+  featherData:
+    forwardForce: 100
+    upForce: 100
+    damage: 10
