@@ -194,10 +194,7 @@ namespace Player
 
         public void TakeDamage()
         {
-            // slow down value
-            slowDownValueForTakingDamage.Play();
-            // sound effect value
-            soundEffectValueForTakingDamage.Play();
+            
             // unity event in not empty
             if (OnTakeDamage != null)
             {
