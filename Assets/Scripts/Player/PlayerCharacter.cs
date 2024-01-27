@@ -194,10 +194,7 @@ namespace Player
 
         public void TakeDamage()
         {
-            // slow down value
-            slowDownValueForTakingDamage.Play();
-            // sound effect value
-            soundEffectValueForTakingDamage.Play();
+            
             // unity event in not empty
             if (OnTakeDamage != null)
             {
@@ -215,6 +212,11 @@ namespace Player
 
         public void PickUpItem(Item.Item item)
         {
+            if (_currentItem != null)
+            {
+                DestroyItem();
+            }
+            
             // Todo: ...
             // spawn item to hand
             var itemInstance =Instantiate(item, Vector3.zero, Quaternion.identity);
@@ -223,6 +225,14 @@ namespace Player
 
             _currentItem = itemInstance;
             _currentItem.Initialize(this);
+        }
+
+        // destroy current item
+        public void DestroyItem()
+        {
+
+            Destroy(_currentItem.gameObject);
+            _currentItem = null;
         }
 
         public void Die()

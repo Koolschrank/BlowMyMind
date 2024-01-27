@@ -6,13 +6,15 @@ namespace Item
 {
     public class ThrowableTriggerArea : MonoBehaviour
     {
-        [SerializeField] private UnityEvent triggerEvent; 
+        [SerializeField] private LayerMask collisionMask;
+        [SerializeField] private UnityEvent triggerEvent;
+        [SerializeField] ThrowableProjectile throwableProjectile_Parent;
         private void OnTriggerEnter(Collider other)
         {
-            if (TryGetComponent(out PlayerCharacter player))
+            if (collisionMask == (collisionMask | (1 << other.gameObject.layer)))
             {
                 triggerEvent?.Invoke();
-                Destroy(gameObject);
+                throwableProjectile_Parent.PlayerCollision(other);
             }
         }
     }
