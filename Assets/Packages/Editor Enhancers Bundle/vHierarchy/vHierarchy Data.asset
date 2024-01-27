@@ -28,9 +28,6 @@ MonoBehaviour:
         - GlobalObjectId_V1-2-9fc0d4010bbf28b4594072e72b8655ab-1698888278-0
         - GlobalObjectId_V1-2-9fc0d4010bbf28b4594072e72b8655ab-705507993-0
         - GlobalObjectId_V1-2-9fc0d4010bbf28b4594072e72b8655ab-1366339388-0
-        - GlobalObjectId_V1-2-9fc0d4010bbf28b4594072e72b8655ab-1071584707869484572-1465647463834336417
-        - GlobalObjectId_V1-2-9fc0d4010bbf28b4594072e72b8655ab-4760667909354176554-3537574835262874792
-        - GlobalObjectId_V1-2-9fc0d4010bbf28b4594072e72b8655ab-4550072531424841434-1788528399440375529
         values:
         - iColor: 1
           icon: 
@@ -38,21 +35,13 @@ MonoBehaviour:
           icon: Light Icon
         - iColor: 0
           icon: Camera Icon
-        - iColor: 0
-          icon: Camera Icon
-        - iColor: 0
-          icon: Folder Icon
-        - iColor: 0
-          icon: EventSystem Icon
       goDatasByInstanceId:
-        keys: 76800000dc7f0000e2faffff4880000038faffff84fafffffefaffff
+        keys: 7a800000e07f00004c80000008fbffff90faffffb2faffff76f7ffff84faffff
         values:
         - iColor: 1
           icon: 
         - iColor: 0
           icon: Light Icon
-        - iColor: 1
-          icon: 
         - iColor: 0
           icon: Camera Icon
         - iColor: 0
@@ -61,6 +50,10 @@ MonoBehaviour:
           icon: Folder Icon
         - iColor: 0
           icon: EventSystem Icon
+        - iColor: 0
+          icon: Folder Icon
+        - iColor: 0
+          icon: 
     - goDatasByGlobalId:
         keys: []
         values: []
