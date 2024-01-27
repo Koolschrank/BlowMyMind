@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Item
 {
-    public abstract class PickupItem : MonoBehaviour
+    public class PickupItem : MonoBehaviour
     {
         [SerializeField] private Item item;
         
@@ -15,7 +15,7 @@ namespace Item
             }
         }
 
-        protected virtual void OnCollected(PlayerCharacter player)
+        private void OnCollected(PlayerCharacter player)
         {
             player.PickUpItem(item);
             DestroyItem();
