@@ -261,3 +261,4 @@ MonoBehaviour:
     upForce: 100
     damage: 10
   coolDownTime: 0.5
+  hitBox: {fileID: 4555138265921317225}

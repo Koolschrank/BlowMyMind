@@ -7,12 +7,11 @@ namespace Item
     {
         [SerializeField] private HitData hitData;
         [SerializeField] private float coolDownTime;
+        [SerializeField] private Collider hitBox;
         
         public override void Initialize(PlayerCharacter player)
         {
             Player = player;
-            
-
         }
 
         public override void Use()
@@ -35,8 +34,16 @@ namespace Item
             hitData.ActivateEffects();
         }
 
+        public override void EnableHitBox()
+        {
+            hitBox.enabled = true;
+        }
 
-        
+        public override void DisableHitBox()
+        {
+            hitBox.enabled = false;
+        }
+
         private void FinishUse()
         {
             InUse = false;
