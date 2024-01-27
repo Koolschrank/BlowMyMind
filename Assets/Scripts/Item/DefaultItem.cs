@@ -10,11 +10,14 @@ namespace Item
         
         public override void Initialize(PlayerCharacter player)
         {
-            throw new System.NotImplementedException();
+            Player = player;
+            
+
         }
 
         public override void Use()
         {
+            Player.PlayAttackAnimation();
             Invoke(nameof(FinishUse), coolDownTime);
         }
 
