@@ -7,11 +7,6 @@ namespace Item
     {
         [SerializeField] private HitData hitData;
         [SerializeField] private float coolDownTime;
-        
-        public override void Initialize(PlayerCharacter player)
-        {
-            Player = player;
-        }
 
         public override void Use()
         {

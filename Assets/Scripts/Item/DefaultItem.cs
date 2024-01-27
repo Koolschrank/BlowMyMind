@@ -6,18 +6,12 @@ namespace Item
     public class DefaultItem : Item
     {
         [SerializeField] private HitData hitData;
-        [SerializeField] private float coolDownTime;
         [SerializeField] private Collider hitBox;
-        
-        public override void Initialize(PlayerCharacter player)
-        {
-            Player = player;
-        }
 
         public override void Use()
         {
+            base.Use();
             Player.PlayAttackAnimation();
-            Invoke(nameof(FinishUse), coolDownTime);
         }
 
         public override void Impact(Collider collider)
@@ -49,10 +43,9 @@ namespace Item
             hitBox.enabled = false;
         }
 
-        private void FinishUse()
+        protected override void FinishUse()
         {
-            InUse = false;
-            UseCompleted?.Invoke();
+            base.FinishUse();
             Depleted?.Invoke();
         }
     }
