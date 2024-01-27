@@ -6,10 +6,12 @@ using UnityEngine;
 public class ThrowableItem : Item.Item
 {
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private float throwForce;
+    [SerializeField] private float throwForceForward;
+    [SerializeField] private float throwForceUp;
     public override void Use()
     {
-        Invoke(nameof(FinishUse), coolDownTime);
+        base.Use();
+        Player.PlayAttackAnimation();
     }
 
     public override void Impact(Collider collider) { }
@@ -17,7 +19,10 @@ public class ThrowableItem : Item.Item
     public override bool Throw()
     {
         var projectileRb = Instantiate(projectilePrefab, transform).GetComponent<Rigidbody>();
-        //projectileRb.AddForce(Player.transform.forward * throwForce); add body forward
+
+        projectileRb.transform.parent = null;
+        projectileRb.transform.position += Vector3.up * 0.5f;
+        projectileRb.AddForce(Player.GetBody().forward * throwForceForward + Player.GetBody().up * throwForceUp);// add body forward
         return true;
     }
 

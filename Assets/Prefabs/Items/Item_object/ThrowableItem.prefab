@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5772526171698019173}
   - component: {fileID: 7541824060669021125}
   - component: {fileID: 8000981228760322846}
-  - component: {fileID: 9067215562171490591}
   - component: {fileID: 1486281356837215894}
   m_Layer: 0
   m_Name: ThrowableItem
@@ -85,27 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9067215562171490591
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508886246796995541}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1486281356837215894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,4 +98,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownTime: 0.5
   projectilePrefab: {fileID: 508886246796995541, guid: fe6c59b00c81dd741ac70bcf03369116, type: 3}
-  throwForce: 2
+  throwForceForward: 400
+  throwForceUp: 400
