@@ -11,10 +11,13 @@ namespace Item
         public override void Initialize(PlayerCharacter player)
         {
             Player = player;
+            
+
         }
 
         public override void Use()
         {
+            Player.PlayAttackAnimation();
             Invoke(nameof(FinishUse), coolDownTime);
         }
 
