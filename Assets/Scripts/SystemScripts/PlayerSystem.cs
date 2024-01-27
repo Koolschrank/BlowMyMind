@@ -10,6 +10,8 @@ namespace SystemScripts
         // make this a singleton
         public static PlayerSystem instance;
 
+        [SerializeField] private List<Color> playerColors;
+        [SerializeField] private VictoryScreen victoryScreen;
         [SerializeField] PlayerConnector[] playerConnectors;
         List<GameObject> players = new List<GameObject>();
     
@@ -80,7 +82,7 @@ namespace SystemScripts
                     playerToWin = playerObj;
                 }
             }
-            if (alivePlayers <= 1)
+            if (alivePlayers == 1)
             { 
                 PlayerWin(playerToWin);
                 return true;
@@ -91,8 +93,9 @@ namespace SystemScripts
 
         public void PlayerWin(PlayerCharacter playerToWin)
         {
+            victoryScreen.Activate(playerToWin != null ? playerToWin.name : "Nobody");
             // debug log
-            Debug.Log("Player " + playerToWin.name + " wins!");
+            Debug.Log("Player " + (playerToWin != null ? playerToWin.name : "null") + " wins!");
         }
     }
 

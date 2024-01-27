@@ -147,7 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cab003b7d3e9fc418d0b27593154dc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 256
   triggerArea: {fileID: 5776614533756646433}
+  stopsOnCollision: 1
 --- !u!1 &5539795898357902498
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +227,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17d8f10847f61b4caefe7d4ed478b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 64
   triggerEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 508886246796995541}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  throwableProjectile_Parent: {fileID: 7985483776885508358}
