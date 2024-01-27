@@ -1192,6 +1192,11 @@ MonoBehaviour:
     forwardForce: 100
     upForce: 100
     damage: 10
+  damageNumberValue:
+    hasDamageNumber: 1
+    damageNumber: {fileID: 1259023133563206875, guid: b1e674f6dbf194d4ab55fdfedf32ddc6, type: 3}
+    spawnPoint: {fileID: 0}
+    offset: {x: 0, y: 0, z: 0}
   attackType: 0
   groundedDrag: 5
   airDrag: 0.2

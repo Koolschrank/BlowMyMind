@@ -37,6 +37,7 @@ public class PlayerCaracter : MonoBehaviour
     public float federTime=2f;
     float federTimeCounter = 0f;
     public HitData federDamage;
+    public DamageNumberValue damageNumberValue;
 
     public int attackType = 0;
 
@@ -297,6 +298,7 @@ public class PlayerCaracter : MonoBehaviour
             OnTakeDamage.Invoke();
         }
         hitFlashValue.StartHitFlash();
+        damageNumberValue.Play(transform);
     }
 
     public void MoveInput(Vector2 direction)
