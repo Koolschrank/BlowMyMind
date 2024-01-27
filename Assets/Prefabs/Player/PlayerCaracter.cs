@@ -53,7 +53,7 @@ public class PlayerCaracter : MonoBehaviour
 
     public Animator animator;
     public Transform hand;
-
+    public float velocityToWalk = 0.1f;
     bool isGrounded = false;
     public void SetGrounded(bool grounded)
     { 
@@ -105,6 +105,15 @@ public class PlayerCaracter : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(movementDirection);
         }
+        if (movePower > velocityToWalk)
+        {
+            animator.SetBool("Walking", true);
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
+        }
+
     }
 
     Vector2 moveInput;
@@ -138,6 +147,7 @@ public class PlayerCaracter : MonoBehaviour
     {
         if (cooldown > 0f) return;
 
+        animator.SetTrigger("Attack");
         switch (attackType)
         {
             case 0:
