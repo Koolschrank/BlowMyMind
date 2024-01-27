@@ -3700,46 +3700,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
-      propertyPath: emissionByDamage.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
-      propertyPath: emissionByDamage.m_Curve.Array.data[1].time
-      value: 60.015236
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
-      propertyPath: emissionByDamage.m_Curve.Array.data[1].value
-      value: 39.035526
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
-      propertyPath: emissionByDamage.m_Curve.Array.data[0].inSlope
-      value: 0.82396716
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
-      propertyPath: emissionByDamage.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
-      propertyPath: emissionByDamage.m_Curve.Array.data[0].outSlope
-      value: 0.82396716
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
-      propertyPath: emissionByDamage.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
-      propertyPath: emissionByDamage.m_Curve.Array.data[0].outWeight
-      value: 0.09054425
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
-      propertyPath: emissionByDamage.m_Curve.Array.data[0].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
-      propertyPath: emissionByDamage.m_Curve.Array.data[1].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
