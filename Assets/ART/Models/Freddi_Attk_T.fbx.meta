@@ -1,34 +1,9 @@
 fileFormatVersion: 2
-guid: 4d319064879eb4e4e9ae7255e0121909
+guid: adc961ab8359f074f93b2919fdb048b0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FredeFace
-    second: {fileID: 2100000, guid: 4ff738ce7ac0a4740a6bf5c9cb73a842, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hair
-    second: {fileID: 2100000, guid: 35af73c456badd542821d0e297ebad63, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pants
-    second: {fileID: 2100000, guid: d2a33432dbf312d439edaededa0f6b47, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Skin
-    second: {fileID: 2100000, guid: 0d1c95bbe901e0f48a05d9bdeb3e4cbd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tshirt
-    second: {fileID: 2100000, guid: 2c7610b56265d8744874f6da702c673c, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -103,7 +78,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
