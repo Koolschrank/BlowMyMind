@@ -3216,11 +3216,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 475332371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -84.4}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -31.12, y: -126.23001}
   m_SizeDelta: {x: 500, y: 100}
-  m_Pivot: {x: 0.5, y: 1}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &920000048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3241,7 +3241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 12 / 12
+  m_text: 12
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: df92d74ca1db4ce498c73a93e2ffd9f9, type: 2}
   m_sharedMaterial: {fileID: 6679389666101881784, guid: df92d74ca1db4ce498c73a93e2ffd9f9, type: 2}
@@ -3268,8 +3268,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 160
+  m_fontSizeBase: 160
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3345,7 +3345,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  textInfo: 1
+  textInfo: 0
 --- !u!114 &920000051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7390,6 +7390,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
+      propertyPath: playerConnectors.Array.data[0].healthListener.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
       propertyPath: playerConnectors.Array.data[0].ammoListener.Array.data[0]
       value: 
       objectReference: {fileID: 1714122816}
@@ -7413,6 +7417,10 @@ PrefabInstance:
       propertyPath: playerConnectors.Array.data[3].ammoListener.Array.data[0]
       value: 
       objectReference: {fileID: 563123745}
+    - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
+      propertyPath: playerConnectors.Array.data[0].healthListener.Array.data[0]
+      value: 
+      objectReference: {fileID: 920000050}
     - target: {fileID: 2241738092030278366, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
       propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.size
       value: 0

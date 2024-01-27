@@ -75,7 +75,7 @@ public class PlayerSystem : MonoBehaviour
 public class PlayerConnector
 {
     [SerializeField] ActionListener[] ammoListener;
-
+    [SerializeField] ActionListener[] healthListener;
 
     public void ConnectListenersToPlayer(GameObject player)
     {
@@ -84,6 +84,13 @@ public class PlayerConnector
         {
             playerMove.lives.AddListener(listener);
         }
+
+        foreach (var listener in healthListener)
+        {
+            playerMove.hitMultiplier.AddListener(listener);
+        }
+
+
         
     }
 }

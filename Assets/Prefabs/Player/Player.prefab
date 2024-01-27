@@ -719,7 +719,6 @@ GameObject:
   - component: {fileID: 2895450489561477158}
   - component: {fileID: 5304420718950057315}
   - component: {fileID: 8473641997553851311}
-  - component: {fileID: 7392367720426534537}
   - component: {fileID: 2540067866258433190}
   - component: {fileID: 1035874733780036053}
   - component: {fileID: 1250711279703891248}
@@ -904,132 +903,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &7392367720426534537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8548235130282511181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 793165baabc899240b7aeebb0bbf2ea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints:
-    value_current: 0
-    value_min: 0
-    value_max: 100
-    resetOnStart: 1
-    noLossEventOnEmpty: 0
-    noGainEventOnFull: 0
-    valueChange:
-      m_PersistentCalls:
-        m_Calls: []
-    valueLoss:
-      m_PersistentCalls:
-        m_Calls: []
-    value_Empty:
-      m_PersistentCalls:
-        m_Calls: []
-    valueGain:
-      m_PersistentCalls:
-        m_Calls: []
-    value_Full:
-      m_PersistentCalls:
-        m_Calls: []
-    listeners: []
-  hitInvincibilityTime: 0.5
-  hitAnimation:
-    flash:
-      hasHitFlash: 0
-      meshes: []
-      hitMaterial: {fileID: 0}
-      hitFlashTime: 0.1
-    slowDown:
-      hasSlowDown: 0
-      magnitudeCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      duration: 0.5
-    shake:
-      hasShake: 0
-      duration: 0.5
-      magnitude: 0.1
-      magnitudeCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    sound:
-      clip: {fileID: 0}
-      volume: 0
-    spawn_fromPool:
-      hasSpawn: 0
-      objectToSpawn: 
-      asChild: 0
-    spawn:
-      hasSpawn: 0
-      objectToSpawn: {fileID: 0}
-      asChild: 0
-    text:
-      hasDamageNumber: 0
-      damageNumber: {fileID: 0}
-      spawnPoint: {fileID: 0}
-      offset: {x: 0, y: 0, z: 0}
-    signal:
-      m_PersistentCalls:
-        m_Calls: []
-  defeatAnimation:
-    flash:
-      hasHitFlash: 0
-      meshes: []
-      hitMaterial: {fileID: 0}
-      hitFlashTime: 0.1
-    slowDown:
-      hasSlowDown: 0
-      magnitudeCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      duration: 0.5
-    shake:
-      hasShake: 0
-      duration: 0.5
-      magnitude: 0.1
-      magnitudeCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    sound:
-      clip: {fileID: 0}
-      volume: 0
-    spawn_fromPool:
-      hasSpawn: 0
-      objectToSpawn: 
-      asChild: 0
-    spawn:
-      hasSpawn: 0
-      objectToSpawn: {fileID: 0}
-      asChild: 0
-    text:
-      hasDamageNumber: 0
-      damageNumber: {fileID: 0}
-      spawnPoint: {fileID: 0}
-      offset: {x: 0, y: 0, z: 0}
-    signal:
-      m_PersistentCalls:
-        m_Calls: []
-  autoConnectEffectsToHealth: 1
-  destroyOnDefeat: 1
 --- !u!114 &2540067866258433190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,7 +962,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     listeners: []
-  moveSpeed: 50
+  moveSpeed: 3000
   hitBox: {fileID: 3207735925940850721}
   hitBoxLayerMask:
     serializedVersion: 2
@@ -1127,6 +1000,8 @@ MonoBehaviour:
   soundEffectValue:
     clip: {fileID: 0}
     volume: 0
+  baseAttackCooldown: 0.5
+  healthRegen: 4
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -1178,15 +1053,37 @@ MonoBehaviour:
     - {fileID: 2895450489561477158}
     hitMaterial: {fileID: 7933299137048178034, guid: a9f670f4eae962b4683c35ae3d1db878, type: 3}
     hitFlashTime: 0.1
-  hitMultiplier: 1
+  hitMultiplier:
+    value_current: 0
+    value_min: 0
+    value_max: 300
+    resetOnStart: 0
+    noLossEventOnEmpty: 0
+    noGainEventOnFull: 0
+    valueChange:
+      m_PersistentCalls:
+        m_Calls: []
+    valueLoss:
+      m_PersistentCalls:
+        m_Calls: []
+    value_Empty:
+      m_PersistentCalls:
+        m_Calls: []
+    valueGain:
+      m_PersistentCalls:
+        m_Calls: []
+    value_Full:
+      m_PersistentCalls:
+        m_Calls: []
+    listeners: []
   BaseDamage:
     forwardForce: 100
     upForce: 10
     damage: 10
   GummiHammerDamage:
-    forwardForce: 50
-    upForce: 100
-    damage: 30
+    forwardForce: 100
+    upForce: 10
+    damage: 10
   federTime: 2
   federDamage:
     forwardForce: 100
@@ -1200,6 +1097,8 @@ MonoBehaviour:
   attackType: 0
   groundedDrag: 5
   airDrag: 0.2
+  animator: {fileID: 0}
+  hand: {fileID: 0}
 --- !u!136 &4736350082295370191
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -17,6 +18,11 @@ public class PlayerCaracter : MonoBehaviour
     public UnityEngine.Events.UnityEvent OnAttack;
     public SlowDownValue slowDownValue;
     public SoundEffectValue soundEffectValue;
+
+    public float baseAttackCooldown = 0.5f;
+    float cooldown = 0f;
+
+    public float healthRegen = 1f;
     
 
 
@@ -29,7 +35,7 @@ public class PlayerCaracter : MonoBehaviour
 
     public HitFlashValue hitFlashValue;
 
-    public float hitMultiplier = 1f;
+    public FloatValue hitMultiplier;
     public HitData BaseDamage;
     public HitData GummiHammerDamage;
 
@@ -43,6 +49,10 @@ public class PlayerCaracter : MonoBehaviour
 
     public float groundedDrag = 1f;
     public float airDrag = 0f;
+
+
+    public Animator animator;
+    public Transform hand;
 
     bool isGrounded = false;
     public void SetGrounded(bool grounded)
@@ -74,8 +84,12 @@ public class PlayerCaracter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hitMultiplier.Value -= Time.deltaTime * healthRegen;
+        
+        cooldown -= Time.deltaTime;
         hitFlashValue.UpdateHitFlash(Time.deltaTime);
         MoveUpdate(Time.deltaTime);
+
     }
 
 
@@ -84,7 +98,7 @@ public class PlayerCaracter : MonoBehaviour
         if (!isGrounded) return;
 
         Vector3 movementDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
-        rb.AddForce(movementDirection * movePower * moveSpeed);
+        rb.AddForce(movementDirection * movePower * moveSpeed * delta);
 
         // rotate to face direction of movement
         if (movementDirection != Vector3.zero)
@@ -113,8 +127,8 @@ public class PlayerCaracter : MonoBehaviour
     public void TakeDamage(Vector3 power,HitData hitData)
     {
 
-        hitMultiplier += hitData.Damage;
-        rb.AddForce(power * hitMultiplier);
+        hitMultiplier.Value += hitData.Damage;
+        rb.AddForce(power * hitMultiplier.Value);
         TakeDamage();
     }
 
@@ -122,6 +136,8 @@ public class PlayerCaracter : MonoBehaviour
 
     public void Action()
     {
+        if (cooldown > 0f) return;
+
         switch (attackType)
         {
             case 0:
@@ -138,7 +154,7 @@ public class PlayerCaracter : MonoBehaviour
             default:
                 break;
         }
-
+        cooldown = baseAttackCooldown;
     }
 
     public void LoseItem()
@@ -321,7 +337,7 @@ public class PlayerCaracter : MonoBehaviour
         PlayerSystem.instance.Respawn(gameObject);
         rb.velocity = Vector3.zero;
 
-        hitMultiplier = 1f;
+        hitMultiplier.Value = 0f;
 
         lives.Value -= 1f;
 
