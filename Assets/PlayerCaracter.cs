@@ -44,6 +44,7 @@ public class PlayerCaracter : MonoBehaviour
 
     private void Awake()
     {
+        PlayerSystem.instance.AddPlayer(gameObject);
         rb = GetComponent<Rigidbody>();
 
         hitFlashValue.SetUpHitFlash();
@@ -84,7 +85,7 @@ public class PlayerCaracter : MonoBehaviour
     {
         if (context.performed)
         {
-            BaseAttack();
+            Action();
         }
     }
 
@@ -96,6 +97,8 @@ public class PlayerCaracter : MonoBehaviour
         TakeDamage();
     }
 
+
+
     public void Action()
     {
         switch (attackType)
@@ -105,14 +108,21 @@ public class PlayerCaracter : MonoBehaviour
                 break;
             case 1:
                 FederAttack();
+                LoseItem();
                 break;
             case 2:
                 GummiHammerAttack();
+                LoseItem();
                 break;
             default:
                 break;
         }
 
+    }
+
+    public void LoseItem()
+    {
+        attackType = 0;
     }
 
     public void BaseAttack()
