@@ -285,9 +285,13 @@ public class FloatValue
 
             if (value_current == value_min)
             {
-                value_Empty?.Invoke();
-                onValueEmpty?.Invoke(this);
+                // print
+                Debug.Log("Value is empty");
+
+                valueLoss?.Invoke();
+                onValueLoss?.Invoke(this);
             }
+            
             else if (value_current == value_max)
             {
                 value_Full?.Invoke();
@@ -340,6 +344,8 @@ public class FloatValue
             onValueLoss?.Invoke(this);
         }
     }
+
+    
 
     public void SubtractValue(float value)
     {

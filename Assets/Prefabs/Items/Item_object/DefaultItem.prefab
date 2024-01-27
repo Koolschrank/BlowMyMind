@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5267078128121692185}
   - component: {fileID: 4555138265921317225}
   - component: {fileID: 6471813800695569298}
+  - component: {fileID: 1205683124665499690}
   m_Layer: 0
   m_Name: HitBox
   m_TagString: Untagged
@@ -59,7 +60,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -75,6 +76,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b606049893bddc4aad4ec2a6f7c24c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1205683124665499690
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580384570559093037}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2536193203853544170
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,8 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitData:
-    forwardForce: 1000
-    upForce: 100
+    forwardForce: 200
+    upForce: 50
     damage: 10
   coolDownTime: 0.5
   hitBox: {fileID: 4555138265921317225}
