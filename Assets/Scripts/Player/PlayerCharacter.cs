@@ -1,3 +1,4 @@
+using Item;
 using SystemScripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,8 +11,7 @@ namespace Player
         Rigidbody rb;
         public float moveSpeed = 10f;
         
-        // unity event for attack
-        public UnityEngine.Events.UnityEvent OnAttack;
+        // 
         
         [SerializeField] private Item.Item defaultItem;
         
@@ -59,14 +59,24 @@ namespace Player
     
         }
 
+        public void SetObjectToHand(Item.Item objectToSet)
+        {
+            // set object as child of hand
+            objectToSet.transform.SetParent(hand);
+            // set position to hand
+            objectToSet.transform.localPosition = Vector3.zero;
+            // set rotation to hand
+            objectToSet.transform.localRotation = Quaternion.identity;
+        }
+
         private void Awake()
         {
             // PlayerSystem.instance.AddPlayer(gameObject);
             rb = GetComponent<Rigidbody>();
 
+            
             hitFlashValue.SetUpHitFlash();
-            _currentItem = defaultItem;
-            _currentItem.Initialize(this);
+            PickUpItem(defaultItem);
         }
 
         // Update is called once per frame
@@ -132,11 +142,21 @@ namespace Player
         public void Action()
         {
             if(_currentItem.InUse)
+            {
+                // debug
+                Debug.Log("Item in use");
                 return;
+            }
+                
             
-            OnAttack?.Invoke();
+
             _currentItem.Use();
             _currentItem.Depleted += LoseItem;
+        }
+
+        public void PlayAttackAnimation()
+        {
+            animator.SetTrigger("Attack");
         }
 
         private void LoseItem()
@@ -169,7 +189,12 @@ namespace Player
         public void PickUpItem(Item.Item item)
         {
             // Todo: ...
-            _currentItem = item;
+            // spawn item to hand
+            var itemInstance =Instantiate(item, Vector3.zero, Quaternion.identity);
+            SetObjectToHand(itemInstance);
+
+
+            _currentItem = itemInstance;
             _currentItem.Initialize(this);
         }
 
