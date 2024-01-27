@@ -9,6 +9,17 @@ public class DeathZoneCollider : MonoBehaviour
     {
         // TODO: Check for Player
         Debug.Log("Collision in DeathZone detected!");
-        Triggered?.Invoke();
+
+
+        // check if other is playercaracter
+        var playerCaracter = other.GetComponent<PlayerCaracter>();
+        if (playerCaracter != null)
+        {
+            // call triggered event
+           playerCaracter.Die();
+
+            // call triggered event
+            Triggered?.Invoke();
+        }
     }
 }

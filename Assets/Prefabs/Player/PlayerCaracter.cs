@@ -16,6 +16,7 @@ public class PlayerCaracter : MonoBehaviour
     public UnityEngine.Events.UnityEvent OnAttack;
     public SlowDownValue slowDownValue;
     public SoundEffectValue soundEffectValue;
+    
 
 
     // unity event for taking damage
@@ -38,9 +39,26 @@ public class PlayerCaracter : MonoBehaviour
 
     public int attackType = 0;
 
+    public float groundedDrag = 1f;
+    public float airDrag = 0f;
 
-
-
+    bool isGrounded = false;
+    public void SetGrounded(bool grounded)
+    { 
+        if (grounded)
+        {
+            isGrounded = true;
+            Debug.Log("grounded");
+            rb.drag = groundedDrag;
+        }
+        else
+        {
+            isGrounded = false;
+            Debug.Log("not grounded");
+            rb.drag = airDrag;
+        }
+    
+    }
 
     private void Awake()
     {
@@ -61,6 +79,7 @@ public class PlayerCaracter : MonoBehaviour
 
     public void MoveUpdate(float delta)
     {
+        if (!isGrounded) return;
 
         Vector3 movementDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
         rb.AddForce(movementDirection * movePower * moveSpeed);
@@ -292,7 +311,17 @@ public class PlayerCaracter : MonoBehaviour
 
 
 
+    public void Die()
+    {
+        Debug.Log("Player died!");
+        // destroy game object
+        PlayerSystem.instance.Respawn(gameObject);
+        rb.velocity = Vector3.zero;
 
+        hitMultiplier = 1f;
+
+
+    }
 }
 
 

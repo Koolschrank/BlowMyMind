@@ -46,15 +46,22 @@ public class PlayerSystem : MonoBehaviour
     public void AddPlayer(GameObject newPlayer)
     {
         // random position
-        Vector3 pos = new Vector3(UnityEngine.Random.Range(minPlayerSpawnPosition.x, maxPlayerSpawnPosition.x), UnityEngine.Random.Range(minPlayerSpawnPosition.y, maxPlayerSpawnPosition.y), UnityEngine.Random.Range(minPlayerSpawnPosition.z, maxPlayerSpawnPosition.z));
-        newPlayer.transform.position = pos;
-        
+        Respawn(newPlayer);
+
+
         if (players.Count >= playerConnectors.Length)
         {
             return;
         }
         playerConnectors[players.Count].ConnectListenersToPlayer(newPlayer);
         players.Add(newPlayer);
+
+    }
+
+    public void Respawn(GameObject playerToReSpawn)
+    {
+        Vector3 pos = new Vector3(UnityEngine.Random.Range(minPlayerSpawnPosition.x, maxPlayerSpawnPosition.x), UnityEngine.Random.Range(minPlayerSpawnPosition.y, maxPlayerSpawnPosition.y), UnityEngine.Random.Range(minPlayerSpawnPosition.z, maxPlayerSpawnPosition.z));
+        playerToReSpawn.transform.position = pos;
 
     }
 }
