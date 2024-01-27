@@ -17,6 +17,10 @@ namespace Item
         public abstract void Use();
 
         public abstract void Impact(Collider collider);
+        
+        public virtual void EnableHitBox() {}
+        public virtual void DisableHitBox() {}
+        public virtual void Throw() {}
     }
     
     // serializeable class for hit with forwarde force up forece and damage
