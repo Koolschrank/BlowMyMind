@@ -3339,7 +3339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &863564863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3354,7 +3354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageNumberValue:
     hasDamageNumber: 1
-    damageNumber: {fileID: 1259023133563206875, guid: b1e674f6dbf194d4ab55fdfedf32ddc6, type: 3}
+    damageNumber: {fileID: 1259023133563206875, guid: 6346289425b909b4781cff11ec44e769, type: 3}
     spawnPoint: {fileID: 0}
     offset: {x: 0, y: 0, z: 0}
     word: BOING
