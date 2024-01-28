@@ -426,10 +426,10 @@ MonoBehaviour:
       damageNumber: {fileID: 1259023133563206875, guid: 949034d66e3f2274f97bed40b8c5def0, type: 3}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0.5, z: 0}
-      word: 
+      word: CLONK
     soundEffectValue:
       clip: {fileID: 8300000, guid: 535e0a31976135044a804cac4bec690e, type: 3}
-      volume: 0.74
+      volume: 1
       hasPitchVariation: 0
       pitchVariation: 0
     OnTakeDamage:

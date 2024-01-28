@@ -4879,7 +4879,7 @@ MonoBehaviour:
   defaultItem: {fileID: -4497055413326994457, guid: 5c9302916c628b549a85f9e234b3e9b6, type: 3}
   actionSound:
     clip: {fileID: 8300000, guid: 1f3ddd93a29900d4ab0f9b69bf02d29e, type: 3}
-    volume: 0.725
+    volume: 0.8
     hasPitchVariation: 0
     pitchVariation: 0
   _currentItem: {fileID: 0}
