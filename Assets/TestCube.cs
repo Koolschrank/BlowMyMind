@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class TestCube : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public DamageNumberValue damageNumberValue;
 
-    // Update is called once per frame
-    void Update()
+
+    public float cooldown = 1f;
+    float timer = 0f;
+
+    private void Update()
     {
-        
+        timer += Time.deltaTime;
+        if (timer >= cooldown)
+        {
+            timer = 0f;
+            damageNumberValue.Play(transform);
+        }
     }
 }
