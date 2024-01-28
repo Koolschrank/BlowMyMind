@@ -3568,9 +3568,14 @@ MonoBehaviour:
     damageNumber: {fileID: 1259023133563206875, guid: b1e674f6dbf194d4ab55fdfedf32ddc6, type: 3}
     spawnPoint: {fileID: 0}
     offset: {x: 0, y: 0, z: 0}
+    word: 
   laughParticles: {fileID: 2477441121432417290}
+  laughRender: {fileID: 195952589314430100}
   groundedDrag: 5
   airDrag: 0.2
+  head: {fileID: 7572076827738196785}
+  baseHeadSize: 100
+  headSizePerDamage: 1
   animator: {fileID: 3473605073319321743}
   hand: {fileID: 7786977794532324148}
   velocityToWalk: 0.1
@@ -3800,6 +3805,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
+--- !u!199 &195952589314430100 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 1249647482797331000, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
+  m_PrefabInstance: {fileID: 1436518627820897964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2477441121432417290 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3570837211506258598, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
