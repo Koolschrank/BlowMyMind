@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -154816613240918607}
   - component: {fileID: 52950308752477020}
   - component: {fileID: 947365524137495083}
+  - component: {fileID: 2789237709961684484}
   m_Layer: 0
   m_Name: ChickenProjectile
   m_TagString: Untagged
@@ -30,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 470854303896191722}
   m_Father: {fileID: 0}
@@ -90,7 +91,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5692642, y: 1.2866845, z: 3.3232775}
+  m_Size: {x: 0.66, y: 0.59, z: 2.57}
   m_Center: {x: -0.014091969, y: 0.14334226, z: 0.34856462}
 --- !u!114 &947365524137495083
 MonoBehaviour:
@@ -105,19 +106,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitData:
-    forwardForce: 30
+    forwardForce: 100
     upForce: 20
-    damage: 20
+    damage: 50
     selfDamage: 0
     slowDownValues:
-      hasSlowDown: 0
+      hasSlowDown: 1
       magnitudeCurve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: -0.012500763
+          value: 0.4882202
+          inSlope: 0.50546116
+          outSlope: 0.50546116
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0.50546116
+          outSlope: 0.50546116
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      duration: 0.5
+      duration: 0.15
     damageNumberValue:
       hasDamageNumber: 1
       damageNumber: {fileID: 1259023133563206875, guid: 2fef97b4dfecf964ba0aad7b54cb5959, type: 3}
@@ -125,11 +144,34 @@ MonoBehaviour:
       offset: {x: 0, y: 0, z: 0}
       word: Quark
     soundEffectValue:
-      clip: {fileID: 0}
-      volume: 0
+      clip: {fileID: 8300000, guid: 52062d26a3ccfe74d936dd6e3b53d920, type: 3}
+      volume: 0.699
+      hasPitchVariation: 1
+      pitchVariation: 0.1
     OnTakeDamage:
       m_PersistentCalls:
         m_Calls: []
+--- !u!65 &2789237709961684484
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508886246796995541}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.08, y: 0.97, z: 2.83}
+  m_Center: {x: 0.08, y: 0.06, z: 0.42}
 --- !u!1001 &72750302906754305
 PrefabInstance:
   m_ObjectHideFlags: 0

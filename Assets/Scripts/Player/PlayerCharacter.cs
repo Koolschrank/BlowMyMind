@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Item;
+using MoreMountains.Feedbacks;
 using SystemScripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,12 +12,14 @@ namespace Player
 {
     public class PlayerCharacter : MonoBehaviour
     {
+        [SerializeField] SoundEffectValue_Array soundesWhenHit;
         public PlayerStats stats;
         public FloatValue lives;
         public Rigidbody rigidBody;
         public float moveSpeed = 10f;
         
         [SerializeField] private Item.Item defaultItem;
+        [SerializeField] SoundEffectValue actionSound;
         
         public Item.Item _currentItem;
 
@@ -32,7 +35,7 @@ namespace Player
         public FloatValue damage;
         
         [Header("Visuals")]
-        [SerializeField] private SkinnedMeshRenderer bodyMesh;
+        [SerializeField] public SkinnedMeshRenderer bodyMesh;
         public Transform body;
         public bool isFaceRandomized = true;
         public bool isFaceRandomizedOnDeath = true;
@@ -40,6 +43,8 @@ namespace Player
         public DamageNumberValue damageNumberValue;
         [SerializeField] private LaughParticles laughParticles;
         [SerializeField] private ParticleSystemRenderer laughRender;
+        [SerializeField] private DeathParticles deathParticles;
+        [SerializeField] public MMF_Player hitShake;
         
         public float groundedDrag = 1f;
         public float airDrag = 0f;
@@ -58,6 +63,12 @@ namespace Player
         [HideInInspector] public Color color = Color.white;
         bool isGrounded = false;
         bool inputEnabled = false;
+        public SoundEffectValue[] walkSounds;
+        public float walkTimeForSound = 0.5f;
+        float walkTime = 0f;
+
+
+
         public void SetInputEnabled(bool enabled)
         {
             inputEnabled = enabled;
@@ -176,6 +187,12 @@ namespace Player
             {
                 body.transform.rotation = Quaternion.LookRotation(movementDirection);
                 lastRotation = body.transform.rotation;
+                walkTime -= delta * moveInput.magnitude;
+                if (walkTime <= 0)
+                {
+                    walkTime = walkTimeForSound;
+                    walkSounds[Random.Range(0, walkSounds.Length)].Play();
+                }
             }
             else
             {
@@ -209,6 +226,7 @@ namespace Player
                 return;
             if (context.performed)
             {
+                
                 Action();
             }
         }
@@ -222,6 +240,9 @@ namespace Player
                 OnTakeDamage.Invoke();
             }
             hitFlashValue.StartHitFlash();
+            soundesWhenHit.Play();
+
+            hitShake.PlayFeedbacks();
 
             //damageNumberValue.Play(transform);
         }
@@ -262,8 +283,8 @@ namespace Player
                 Debug.Log("Item in use");
                 return;
             }
-                
-            
+
+            actionSound.Play();
 
             _currentItem.Use();
             _currentItem.Depleted += LoseItem;
@@ -314,6 +335,9 @@ namespace Player
         public void Die()
         {
             damage.Value = damage.Value_min;
+            var deathPosition = transform.position;
+            var newDeathParticles = Instantiate(deathParticles, deathPosition, Quaternion.Euler(-90, 0, 0));
+            newDeathParticles.GetComponent<DeathParticles>().SetColor(color);
             Debug.Log("Player died!");
             // destroy game object
             PlayerSystem.instance.Respawn(gameObject);
@@ -321,11 +345,10 @@ namespace Player
             {
                 SetFaceMaterials(availableFaces[Random.Range(0, availableFaces.Count)]);
             }
+
             rigidBody.velocity = Vector3.zero;
             lives.Value -= 1f;
-
             PlayerSystem.instance.CheckForWinner();
-
         }
     }
 }

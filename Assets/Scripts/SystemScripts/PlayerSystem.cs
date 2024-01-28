@@ -19,6 +19,7 @@ namespace SystemScripts
         [SerializeField] public Transform[] spawnPoints;
         [SerializeField] public GameObject StartUI;
         [SerializeField] public SoundEffectValue playerDeathSound;
+        [SerializeField] public SoundEffectValue playerDeathSound2;
         [SerializeField] public SlowDownValue playerDeathSlowDown;
         bool gameStarted = false;
 
@@ -94,7 +95,9 @@ namespace SystemScripts
             playerConnectors[players.Count].ConnectListenersToPlayer(newPlayer);
             playerLivePoints[players.Count].SetUiPointsColor(playerShirtMaterials[players.Count].color);
             players.Add(newPlayer);
-           
+            newPlayer.GetComponent<PlayerCharacter>().SetInputEnabled(gameStarted);
+
+
         }
 
         public void Respawn(GameObject playerToReSpawn)
@@ -112,6 +115,7 @@ namespace SystemScripts
             OnPlayerDie.Invoke();
             playerDeathSlowDown.Play();
             playerDeathSound.Play();
+            playerDeathSound2.Play();
 
 
 
@@ -137,7 +141,7 @@ namespace SystemScripts
 
         public void PlayerWin(PlayerCharacter playerToWin)
         {
-            victoryScreen.Activate(playerToWin != null ? playerToWin.title : "Nobody", playerToWin.color);
+            victoryScreen.Activate(playerToWin != null ? playerToWin.title : "Nobody", playerToWin.color, playerToWin.bodyMesh);
             // debug log
             Debug.Log("Player " + (playerToWin != null ? playerToWin.title : "null") + " wins!");
         }

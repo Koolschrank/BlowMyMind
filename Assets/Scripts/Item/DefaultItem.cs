@@ -7,6 +7,7 @@ namespace Item
     {
         [SerializeField] private HitData hitData;
         [SerializeField] private Collider hitBox;
+        [SerializeField] SoundEffectValue_Array soundes;
 
         public override void Use()
         {
@@ -25,7 +26,9 @@ namespace Item
             Vector3 power = Player.GetBody().forward * hitData.ForwardForce + Player.GetBody().up * hitData.UpForce;
             nearbyPlayer.TakeDamage(power, hitData);
             Player.TakeDamage(hitData.SelfDamage);
-           
+            soundes.Play();
+
+
         }
 
         public override void EnableHitBox()

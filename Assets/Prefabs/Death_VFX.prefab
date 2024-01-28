@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7232412014781808996}
   - component: {fileID: 3362976666980160286}
   - component: {fileID: 7353147212101488810}
+  - component: {fileID: 8122940148288087871}
   m_Layer: 0
   m_Name: Death_VFX
   m_TagString: Untagged
@@ -48,7 +49,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -169,8 +170,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 30
-      minScalar: 40
+      scalar: 1
+      minScalar: 30
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -666,7 +667,7 @@ ParticleSystem:
     enabled: 1
     type: 8
     angle: 13.081332
-    length: 5
+    length: 7.5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
@@ -4888,3 +4889,17 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8122940148288087871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7771774213574386236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6bd8f56275e465489195b4379b0def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 3362976666980160286}
+  renderer: {fileID: 7353147212101488810}
