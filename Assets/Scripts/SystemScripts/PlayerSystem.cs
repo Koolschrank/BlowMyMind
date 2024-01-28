@@ -10,6 +10,7 @@ namespace SystemScripts
         // make this a singleton
         public static PlayerSystem instance;
 
+        [SerializeField] private List<UI_Points> playerLivePoints;
         [SerializeField] private List<Material> playerPantMaterials;
         [SerializeField] private List<Material> playerShirtMaterials;
         [SerializeField] private VictoryScreen victoryScreen;
@@ -84,6 +85,7 @@ namespace SystemScripts
             newPlayer.GetComponent<PlayerCharacter>().SetClothsMaterials(playerPantMaterials[players.Count],
                 playerShirtMaterials[players.Count]);
             playerConnectors[players.Count].ConnectListenersToPlayer(newPlayer);
+            playerLivePoints[players.Count].SetUiPointsColor(playerShirtMaterials[players.Count].color);
             players.Add(newPlayer);
            
         }
