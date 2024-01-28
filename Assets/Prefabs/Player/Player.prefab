@@ -4588,6 +4588,7 @@ MonoBehaviour:
   laughParticles: {fileID: 2477441121432417290}
   laughRender: {fileID: 195952589314430100}
   deathParticles: {fileID: 8122940148288087871, guid: 5cf45268fe62ebe41b2c234e98b517bb, type: 3}
+  hitShake: {fileID: 6896135858179129169}
   groundedDrag: 5
   airDrag: 0.2
   head: {fileID: 7572076827738196785}
