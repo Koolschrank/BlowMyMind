@@ -3719,6 +3719,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7826693525542694797, guid: 7f674becbf88bb04ba39df26783c823e, type: 3}
       propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826693525542694797, guid: 7f674becbf88bb04ba39df26783c823e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826693525542694797, guid: 7f674becbf88bb04ba39df26783c823e, type: 3}
+      propertyPath: moveWithTransform
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7826693525542694797, guid: 7f674becbf88bb04ba39df26783c823e, type: 3}

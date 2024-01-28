@@ -15,6 +15,14 @@ public class UI_Points : ActionListener
             gameObject.SetActive(false);
     }
 
+    public void SetUiPointsColor(Color newColor)
+    {
+        foreach (var uiPoint in ui_Points)
+        {
+            uiPoint.color = newColor;
+        }
+    }
+
     public override void ConnectValue(FloatValue floatValue)
     {
         // set all children to active
