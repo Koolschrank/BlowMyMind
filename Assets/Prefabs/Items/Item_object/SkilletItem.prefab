@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 580384570559093037}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.51}
-  m_LocalScale: {x: 2, y: 2, z: 4}
+  m_LocalPosition: {x: 0, y: 0, z: -0.048}
+  m_LocalScale: {x: 1.5, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2236791761320131982}
@@ -134,8 +134,8 @@ MonoBehaviour:
   hitData:
     forwardForce: 400
     upForce: 50
-    damage: 0
-    selfDamage: 15
+    damage: 5
+    selfDamage: 4
   hitBox: {fileID: 4555138265921317225}
 --- !u!1001 &3191359549953911488
 PrefabInstance:

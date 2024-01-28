@@ -110,6 +110,11 @@ MonoBehaviour:
     m_Bits: 256
   triggerArea: {fileID: 5776614533756646433}
   stopsOnCollision: 1
+  damageData:
+    forwardForce: 0
+    upForce: 500
+    damage: 25
+    selfDamage: 0
 --- !u!1 &5539795898357902498
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,8 +143,8 @@ Transform:
   m_GameObject: {fileID: 5539795898357902498}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalPosition: {x: 0, y: 0.721, z: 0}
+  m_LocalScale: {x: 3, y: 2, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5772526171698019173}
@@ -208,6 +213,7 @@ MonoBehaviour:
     forwardForce: 100
     upForce: 100
     damage: 20
+    selfDamage: 0
 --- !u!1001 &5428399715261703275
 PrefabInstance:
   m_ObjectHideFlags: 0

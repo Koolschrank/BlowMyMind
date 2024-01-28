@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 580384570559093037}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.51}
-  m_LocalScale: {x: 7.909787, y: 5.8056955, z: 3.295058}
+  m_LocalPosition: {x: 0, y: 0, z: -0.033}
+  m_LocalScale: {x: 6.57, y: 5.8056955, z: -2.34}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2236791761320131982}
@@ -204,5 +204,6 @@ MonoBehaviour:
   hitData:
     forwardForce: 200
     upForce: 50
-    damage: 0
+    damage: 0.5
+    selfDamage: 0
   hitBox: {fileID: 4555138265921317225}

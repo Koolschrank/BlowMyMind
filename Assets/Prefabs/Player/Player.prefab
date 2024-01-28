@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 7415498937635185151}
   - component: {fileID: 1523539609655911605}
   - component: {fileID: 7818028755935603410}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: GroundTouch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3450,7 +3450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518507ec97accfb4695c58a0c78b4387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 2aa4b8164484e4d4a8ba0c034a794ba2, type: 2}
+  stats: {fileID: 11400000, guid: 499683266bd81c043a4acb78fcaa4ef2, type: 2}
   lives:
     value_current: 5
     value_min: 0
@@ -3478,7 +3478,6 @@ MonoBehaviour:
   moveSpeed: 3000
   defaultItem: {fileID: -4497055413326994457, guid: 5c9302916c628b549a85f9e234b3e9b6, type: 3}
   _currentItem: {fileID: 0}
-  healthRegen: 4
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -3531,10 +3530,10 @@ MonoBehaviour:
     hitMaterial: {fileID: 7933299137048178034, guid: a9f670f4eae962b4683c35ae3d1db878, type: 3}
     hitFlashTime: 0.1
   damage:
-    value_current: 0
+    value_current: 1
     value_min: 0
     value_max: 100
-    resetOnStart: 1
+    resetOnStart: 0
     noLossEventOnEmpty: 0
     noGainEventOnFull: 0
     valueChange:

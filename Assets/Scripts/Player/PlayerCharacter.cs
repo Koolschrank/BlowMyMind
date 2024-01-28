@@ -67,6 +67,7 @@ namespace Player
 
         private void Awake()
         {
+            damage.Value = damage.Value_min;
             damage.Value_max = stats.maxPlayerDamage;
             damage.onValueChange += laughParticles.OnDamageChanged;
             // PlayerSystem.instance.AddPlayer(gameObject);
@@ -140,7 +141,7 @@ namespace Player
             MoveUpdate(Time.deltaTime);
         }
 
-
+        Quaternion lastRotation;
         public void MoveUpdate(float delta)
         {
             if (!isGrounded) return;
@@ -152,6 +153,11 @@ namespace Player
             if (movementDirection != Vector3.zero)
             {
                 body.transform.rotation = Quaternion.LookRotation(movementDirection);
+                lastRotation = body.transform.rotation;
+            }
+            else
+            {
+                body.transform.rotation = lastRotation;
             }
             if (movePower > velocityToWalk)
             {
@@ -272,7 +278,7 @@ namespace Player
 
         public void Die()
         {
-            damage.Value = 0;
+            damage.Value = damage.Value_min;
             Debug.Log("Player died!");
             // destroy game object
             PlayerSystem.instance.Respawn(gameObject);

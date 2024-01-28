@@ -22,7 +22,7 @@ namespace Item
             if (nearbyPlayer == Player)
                 return;
             
-            Vector3 power = transform.forward * hitData.ForwardForce + transform.up * hitData.UpForce;
+            Vector3 power = Player.GetBody().forward * hitData.ForwardForce + Player.GetBody().up * hitData.UpForce;
             nearbyPlayer.TakeDamage(power, hitData);
             Player.TakeDamage(hitData.SelfDamage);
             hitData.ActivateEffects();

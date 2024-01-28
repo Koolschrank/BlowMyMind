@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 580384570559093037}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.51}
+  m_LocalPosition: {x: 0, y: 0, z: -0.067}
   m_LocalScale: {x: 2, y: 2, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -132,9 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownTime: 0.5
   hitData:
-    forwardForce: 0
-    upForce: 0
-    damage: 10
+    forwardForce: 20
+    upForce: 40
+    damage: 15
+    selfDamage: 0
   hitBox: {fileID: 4555138265921317225}
 --- !u!1001 &3375588348805510733
 PrefabInstance:
