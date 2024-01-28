@@ -111,14 +111,32 @@ MonoBehaviour:
     damage: 50
     selfDamage: 0
     slowDownValues:
-      hasSlowDown: 0
+      hasSlowDown: 1
       magnitudeCurve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: -0.012500763
+          value: 0.4882202
+          inSlope: 0.50546116
+          outSlope: 0.50546116
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0.50546116
+          outSlope: 0.50546116
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      duration: 0.5
+      duration: 0.15
     damageNumberValue:
       hasDamageNumber: 1
       damageNumber: {fileID: 1259023133563206875, guid: 2fef97b4dfecf964ba0aad7b54cb5959, type: 3}
@@ -126,10 +144,10 @@ MonoBehaviour:
       offset: {x: 0, y: 0, z: 0}
       word: Quark
     soundEffectValue:
-      clip: {fileID: 0}
-      volume: 0
-      hasPitchVariation: 0
-      pitchVariation: 0
+      clip: {fileID: 8300000, guid: 111ceb42462404e47baaa3d80b414351, type: 3}
+      volume: 0.689
+      hasPitchVariation: 1
+      pitchVariation: 0.1
     OnTakeDamage:
       m_PersistentCalls:
         m_Calls: []
