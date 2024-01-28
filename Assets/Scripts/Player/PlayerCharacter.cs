@@ -42,6 +42,9 @@ namespace Player
         
         public float groundedDrag = 1f;
         public float airDrag = 0f;
+        public GameObject head;
+        public float baseHeadSize = 1f;
+        public float headSizePerDamage = 1f;
 
 
         public Animator animator;
@@ -142,7 +145,10 @@ namespace Player
         void Update()
         {
             damage.Value -= Time.deltaTime * healthRegen;
-            
+            head.transform.localScale = Vector3.one * (baseHeadSize + damage.Value * headSizePerDamage);
+
+
+
             hitFlashValue.UpdateHitFlash(Time.deltaTime);
             MoveUpdate(Time.deltaTime);
         }

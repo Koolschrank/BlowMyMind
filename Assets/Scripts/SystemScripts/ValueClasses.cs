@@ -76,7 +76,7 @@ public class SpawnValue
 public class HitFlashValue
 {
     [SerializeField] bool hasHitFlash = false;
-    [SerializeField] MeshRenderer[] meshes;
+    [SerializeField] SkinnedMeshRenderer[] meshes;
     [SerializeField] Material hitMaterial;
     Material[] originalMaterials;
     [SerializeField] float hitFlashTime = 0.1f;
