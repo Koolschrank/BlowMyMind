@@ -353,7 +353,7 @@ MonoBehaviour:
   stopsOnCollision: 1
   damageData:
     forwardForce: 0
-    upForce: 80
+    upForce: 200
     damage: 50
     selfDamage: 0
     slowDownValues:

@@ -4532,7 +4532,7 @@ MonoBehaviour:
     hitFlashTime: 0.1
   damage:
     value_current: 1
-    value_min: 0
+    value_min: 10
     value_max: 100
     resetOnStart: 0
     noLossEventOnEmpty: 0
