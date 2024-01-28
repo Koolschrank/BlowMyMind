@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SystemScripts;
 using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
@@ -19,6 +20,11 @@ public class ItemSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!PlayerSystem.instance.IsGameStarted())
+        {
+            return;
+        }
+        
         // spawn item
         spawnTimeCounter += Time.deltaTime;
         if (spawnTimeCounter >= spawnTime)

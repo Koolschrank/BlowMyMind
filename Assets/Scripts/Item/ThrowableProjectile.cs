@@ -11,6 +11,7 @@ namespace Item
         [SerializeField] private Collider triggerArea;
         [SerializeField] private bool stopsOnCollision;
         [SerializeField] HitData damageData;
+        [SerializeField] bool setPlayerVelocityToZero;
         private void OnCollisionEnter(Collision other)
         {
             Debug.Log("Item hit box trigger enter");
@@ -30,20 +31,20 @@ namespace Item
         // player collision
         public void PlayerCollision(Collider other)
         {
-            // check if collision is with player
-            if (collisionMask == (collisionMask | (1 << other.gameObject.layer)))
+            PlayerCharacter player = other.GetComponent<PlayerCharacter>();
+            if (player == null)
             {
-                // print
-                PlayerCharacter player = other.GetComponent<PlayerCharacter>();
-                if (player == null)
-                {
-                    Debug.LogError($"Throwable Area was enter by collider '{other.name}' which is missing a valid PlayerCharacter component.");
-                    return;
-                }
-                var positionDiff = player.transform.position - transform.position;
-                Vector3 power = positionDiff * damageData.ForwardForce + transform.up * damageData.UpForce;
-                player.TakeDamage(power, damageData);
+                Debug.LogError($"Throwable Area was enter by collider '{other.name}' which is missing a valid PlayerCharacter component.");
+                return;
             }
+            if (setPlayerVelocityToZero)
+            {
+                player.SetPlayerVelocityToZero();
+            }
+            var positionDiff = player.transform.position - transform.position;
+
+            Vector3 power = positionDiff * damageData.ForwardForce + transform.up * damageData.UpForce;
+            player.TakeDamage(power, damageData);
             Destroy(gameObject);
             return;
         }

@@ -47,8 +47,14 @@ namespace Player
         public Animator animator;
         public Transform hand;
         public float velocityToWalk = 0.1f;
+        public float healthRegen = 1f;
         
         bool isGrounded = false;
+        bool inputEnabled = false;
+        public void SetInputEnabled(bool enabled)
+        {
+            inputEnabled = enabled;
+        }
         public void SetGrounded(bool grounded)
         { 
             if (grounded)
@@ -135,7 +141,7 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
-            //knockBackMultiplier.Value -= Time.deltaTime * healthRegen;
+            damage.Value -= Time.deltaTime * healthRegen;
             
             hitFlashValue.UpdateHitFlash(Time.deltaTime);
             MoveUpdate(Time.deltaTime);
@@ -148,7 +154,7 @@ namespace Player
 
             Vector3 movementDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
             rigidBody.AddForce(movementDirection * movePower * moveSpeed * delta);
-
+            
             // rotate to face direction of movement
             if (movementDirection != Vector3.zero)
             {
@@ -174,6 +180,8 @@ namespace Player
         float movePower;
         public void MoveInput(InputAction.CallbackContext direction)
         {
+            if (!inputEnabled)
+                return;
             MoveInput(direction.ReadValue<Vector2>());
         }
 
@@ -181,6 +189,8 @@ namespace Player
         // attack input
         public void AttackInput(InputAction.CallbackContext context)
         {
+            if (!inputEnabled)
+                return;
             if (context.performed)
             {
                 Action();
@@ -205,6 +215,11 @@ namespace Player
                 return;
             TakeDamage();
             damage.Value += amount;
+        }
+
+        public void SetPlayerVelocityToZero()
+        {
+            rigidBody.velocity = Vector3.zero;
         }
         
         public void TakeDamage(Vector3 power, HitData hitData)
