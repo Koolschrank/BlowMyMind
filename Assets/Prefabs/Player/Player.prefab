@@ -2611,7 +2611,7 @@ Transform:
   m_LocalRotation: {x: -0.00000011920929, y: -0.00000035762775, z: 4.2632564e-14, w: 1}
   m_LocalPosition: {x: 0, y: 0.356, z: 0.0123205185}
   m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1350806065114174796}
   m_Father: {fileID: 2877585658312796840}
@@ -2676,7 +2676,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: -0.003, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -2.6373764e-12, y: 0.0020003363, z: 0.0001550267}
+  m_ConnectedAnchor: {x: 9.2376606e-11, y: 0.0054023964, z: 0.00020603416}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -3526,7 +3526,7 @@ MonoBehaviour:
   hitFlashValue:
     hasHitFlash: 1
     meshes:
-    - {fileID: 2895450489561477158}
+    - {fileID: 7852606779742955613}
     hitMaterial: {fileID: 7933299137048178034, guid: a9f670f4eae962b4683c35ae3d1db878, type: 3}
     hitFlashTime: 0.1
   damage:
@@ -3569,9 +3569,13 @@ MonoBehaviour:
   laughParticles: {fileID: 2477441121432417290}
   groundedDrag: 5
   airDrag: 0.2
+  head: {fileID: 7572076827738196785}
+  baseHeadSize: 85
+  headSizePerDamage: 2
   animator: {fileID: 3473605073319321743}
   hand: {fileID: 7786977794532324148}
   velocityToWalk: 0.1
+  healthRegen: 1
 --- !u!136 &4736350082295370191
 CapsuleCollider:
   m_ObjectHideFlags: 0

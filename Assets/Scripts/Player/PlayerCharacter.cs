@@ -42,6 +42,9 @@ namespace Player
         
         public float groundedDrag = 1f;
         public float airDrag = 0f;
+        public GameObject head;
+        public float baseHeadSize = 1f;
+        public float headSizePerDamage = 1f;
 
 
         public Animator animator;
@@ -142,7 +145,10 @@ namespace Player
         void Update()
         {
             damage.Value -= Time.deltaTime * healthRegen;
-            
+            head.transform.localScale = Vector3.one * (baseHeadSize + damage.Value * headSizePerDamage);
+
+
+
             hitFlashValue.UpdateHitFlash(Time.deltaTime);
             MoveUpdate(Time.deltaTime);
         }
@@ -206,7 +212,8 @@ namespace Player
                 OnTakeDamage.Invoke();
             }
             hitFlashValue.StartHitFlash();
-            damageNumberValue.Play(transform);
+
+            //damageNumberValue.Play(transform);
         }
         
         public void TakeDamage(float amount)
@@ -229,6 +236,9 @@ namespace Player
             Debug.Log("Knockback " + knockBackMultiplier);
             rigidBody.AddForce(power * knockBackMultiplier);
             damage.Value += hitData.Damage;
+            hitData.ActivateEffects();
+            hitData.GetDamageNumberValue().Play(transform);
+            hitData.ActivateEffects();
             TakeDamage();
         }
 
