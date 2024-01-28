@@ -20,6 +20,11 @@ namespace SystemScripts
         [SerializeField] public GameObject StartUI;
         bool gameStarted = false;
 
+        //unity event when player dies
+        public UnityEngine.Events.UnityEvent OnPlayerDie;
+
+
+
         public void StartGame()
         {
             gameStarted = true;
@@ -96,9 +101,13 @@ namespace SystemScripts
             playerToReSpawn.transform.position = pos;
 
         }
+ 
 
         public bool CheckForWinner()
         {
+            // player die event
+            OnPlayerDie.Invoke();
+
             PlayerCharacter playerToWin = null;
             int alivePlayers = 0;
             foreach (var player in players)
