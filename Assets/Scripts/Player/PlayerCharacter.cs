@@ -191,7 +191,8 @@ namespace Player
                 if (walkTime <= 0)
                 {
                     walkTime = walkTimeForSound;
-                    walkSounds[Random.Range(0, walkSounds.Length)].Play();
+                    if (walkSounds.Length > 0)
+                        walkSounds[Random.Range(0, walkSounds.Length)].Play();
                 }
             }
             else
