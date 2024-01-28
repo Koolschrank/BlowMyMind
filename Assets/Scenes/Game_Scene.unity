@@ -6996,6 +6996,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 31835a5eb705f4a30865b07048197974, type: 3}
     - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
+      propertyPath: playerDeathSound2.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c97931f14e4a8e4e9e48b9fe4bb5b91, type: 3}
+    - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -7014,6 +7018,10 @@ PrefabInstance:
     - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
       propertyPath: minPlayerSpawnPosition.y
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
+      propertyPath: playerDeathSound2.volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
       propertyPath: spawnPoints.Array.data[0]
@@ -7073,6 +7081,14 @@ PrefabInstance:
       objectReference: {fileID: 563123745}
     - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
       propertyPath: playerDeathSlowDown.hasSlowDown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
+      propertyPath: playerDeathSound2.pitchVariation
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
+      propertyPath: playerDeathSound2.hasPitchVariation
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}

@@ -481,7 +481,7 @@ MonoBehaviour:
       word: POW
     soundEffectValue:
       clip: {fileID: 8300000, guid: 08b15283493d14e6ebacebed36250d4e, type: 3}
-      volume: 0.769
+      volume: 0
       hasPitchVariation: 0
       pitchVariation: 0
     OnTakeDamage:
@@ -500,3 +500,21 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   hitBox: {fileID: 4555138265921317225}
+  soundes:
+    soundEffectValues:
+    - clip: {fileID: 8300000, guid: 11efd8ddf3b5e0040b3e657a61e9f41b, type: 3}
+      volume: 0.55
+      hasPitchVariation: 0
+      pitchVariation: 0
+    - clip: {fileID: 8300000, guid: 52062d26a3ccfe74d936dd6e3b53d920, type: 3}
+      volume: 0.55
+      hasPitchVariation: 0
+      pitchVariation: 0
+    - clip: {fileID: 8300000, guid: 3263d4fd1fd8d804e8e9d9fe50d7e829, type: 3}
+      volume: 0.55
+      hasPitchVariation: 0
+      pitchVariation: 0
+    - clip: {fileID: 8300000, guid: 4b4c0eda18709e843b092629fcfbe316, type: 3}
+      volume: 0.55
+      hasPitchVariation: 0
+      pitchVariation: 0

@@ -144,8 +144,8 @@ MonoBehaviour:
       offset: {x: 0, y: 0, z: 0}
       word: Quark
     soundEffectValue:
-      clip: {fileID: 8300000, guid: 111ceb42462404e47baaa3d80b414351, type: 3}
-      volume: 0.689
+      clip: {fileID: 8300000, guid: 52062d26a3ccfe74d936dd6e3b53d920, type: 3}
+      volume: 0.699
       hasPitchVariation: 1
       pitchVariation: 0.1
     OnTakeDamage:

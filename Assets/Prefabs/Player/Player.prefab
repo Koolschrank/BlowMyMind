@@ -4444,6 +4444,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518507ec97accfb4695c58a0c78b4387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundesWhenHit:
+    soundEffectValues:
+    - clip: {fileID: 8300000, guid: cabeec05657ab1a43bab8d9bec495151, type: 3}
+      volume: 0.612
+      hasPitchVariation: 1
+      pitchVariation: 0.15
+    - clip: {fileID: 8300000, guid: 229b502435bbf0a488086e0874aeb3c6, type: 3}
+      volume: 0.612
+      hasPitchVariation: 1
+      pitchVariation: 0.15
+    - clip: {fileID: 8300000, guid: 296ec7d1686e6934baded1833de2009a, type: 3}
+      volume: 0.612
+      hasPitchVariation: 1
+      pitchVariation: 0.15
+    - clip: {fileID: 8300000, guid: 19f61f81c6eb48347b1219fc8c0f1bf1, type: 3}
+      volume: 0.612
+      hasPitchVariation: 1
+      pitchVariation: 0.15
   stats: {fileID: 11400000, guid: d137152f2dccbfe449d4089934e7fd12, type: 2}
   lives:
     value_current: 5

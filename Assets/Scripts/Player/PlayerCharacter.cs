@@ -11,6 +11,7 @@ namespace Player
 {
     public class PlayerCharacter : MonoBehaviour
     {
+        [SerializeField] SoundEffectValue_Array soundesWhenHit;
         public PlayerStats stats;
         public FloatValue lives;
         public Rigidbody rigidBody;
@@ -236,6 +237,7 @@ namespace Player
                 OnTakeDamage.Invoke();
             }
             hitFlashValue.StartHitFlash();
+            soundesWhenHit.Play();
 
             //damageNumberValue.Play(transform);
         }
