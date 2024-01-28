@@ -20,8 +20,6 @@ namespace Player
         Rigidbody rb;
         public float moveSpeed = 10f;
         
-        // 
-        
         [SerializeField] private Item.Item defaultItem;
         
         public Item.Item _currentItem;
@@ -90,6 +88,14 @@ namespace Player
             materials[4] = faceData.hairMaterial;
             bodyMesh.materials = materials;
             Debug.Log("Materials set!");
+        }
+
+        public void SetClothsMaterials(Material pantsMaterial, Material shirtMaterial)
+        {
+            var materials = bodyMesh.materials;
+            materials[2] = shirtMaterial;
+            materials[3] = pantsMaterial;
+            bodyMesh.materials = materials;
         }
         
         private void Start()
