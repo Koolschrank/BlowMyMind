@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465788, g: 0.49641287, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -383,9 +383,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 8
-  spawnReduceTime: 1
+  spawnReduceTime: 0.1
   spawnReduceTimeDelay: 10
-  cap: 2
+  cap: 1
   items:
   - {fileID: 508886246796995541, guid: 38511c5637b15dc438a5e42285b8a7b3, type: 3}
   - {fileID: 508886246796995541, guid: 0fa733b92b4933540a8e87671d1a07e0, type: 3}
@@ -738,6 +738,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307472579}
   m_CullTransparentMesh: 1
+--- !u!1 &315123470 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7758081291713262380, guid: 4bf0385525d661a41a04aef6fed02205, type: 3}
+  m_PrefabInstance: {fileID: 6758330670756185138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &319190276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,6 +2806,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62742562f727a934b8a13be371a68b1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!137 &1330906995 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2736908672205985047, guid: 4bf0385525d661a41a04aef6fed02205, type: 3}
+  m_PrefabInstance: {fileID: 6758330670756185138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1361264695
 GameObject:
   m_ObjectHideFlags: 0
@@ -6468,6 +6478,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 540
       objectReference: {fileID: 0}
+    - target: {fileID: 4604362580716650376, guid: 14ababfe0d3948244b7a393d92acbee2, type: 3}
+      propertyPath: winnerModelObject
+      value: 
+      objectReference: {fileID: 315123470}
+    - target: {fileID: 4604362580716650376, guid: 14ababfe0d3948244b7a393d92acbee2, type: 3}
+      propertyPath: winnerModelRenderer
+      value: 
+      objectReference: {fileID: 1330906995}
     - target: {fileID: 5974274109336888494, guid: 14ababfe0d3948244b7a393d92acbee2, type: 3}
       propertyPath: m_Name
       value: VictoryScreen
