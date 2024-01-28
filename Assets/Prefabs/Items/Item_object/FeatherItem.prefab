@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDownTime: 0.5
+  deathParticles: {fileID: 3599696260236611811, guid: 7f674becbf88bb04ba39df26783c823e, type: 3}
   hitData:
     forwardForce: 40
     upForce: 10
@@ -173,6 +174,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   hitBox: {fileID: 4555138265921317225}
+  soundes:
+    soundEffectValues: []
 --- !u!1 &8704159890257946033
 GameObject:
   m_ObjectHideFlags: 0

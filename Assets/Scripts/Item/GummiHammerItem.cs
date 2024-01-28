@@ -7,7 +7,6 @@ namespace Item
     {
         [SerializeField] private HitData hitData; 
         [SerializeField] private Collider hitBox;
-
         public override void Use()
         {
             base.Use();
@@ -25,7 +24,7 @@ namespace Item
             Vector3  power = Player.GetBody().forward * hitData.ForwardForce + Player.GetBody().up * hitData.UpForce;
             nearbyPlayer.TakeDamage(power, hitData);
             Player.TakeDamage(hitData.SelfDamage);
-            
+            Instantiate(deathParticles, transform.position, Quaternion.identity);
         }
         
         public override void EnableHitBox()

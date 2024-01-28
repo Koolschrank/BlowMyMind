@@ -10,6 +10,7 @@ namespace Item
         public Action UseCompleted;
         
         [SerializeField] protected float coolDownTime;
+        [SerializeField] protected DeathParticles deathParticles;
         
         public bool InUse { get; protected set; }
 

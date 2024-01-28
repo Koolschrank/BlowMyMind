@@ -27,8 +27,8 @@ namespace Item
             nearbyPlayer.TakeDamage(power, hitData);
             Player.TakeDamage(hitData.SelfDamage);
             soundes.Play();
-
-
+            
+            Instantiate(deathParticles, transform.position, Quaternion.identity);
         }
 
         public override void EnableHitBox()
