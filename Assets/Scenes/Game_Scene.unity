@@ -390,9 +390,9 @@ MonoBehaviour:
   - {fileID: 508886246796995541, guid: b6a0c592c1dfee84f9018f8d402a62f3, type: 3}
   - {fileID: 508886246796995541, guid: adc93068fd9f0f247862b40595475d16, type: 3}
   probabilities:
+  - 2
   - 1
-  - 1
-  - 1
+  - 2
   - 1
   - 1
   minPos: {x: -5, y: 10, z: -5}
