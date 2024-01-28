@@ -423,7 +423,7 @@ MonoBehaviour:
       duration: 1
     damageNumberValue:
       hasDamageNumber: 1
-      damageNumber: {fileID: 1259023133563206875, guid: b1e674f6dbf194d4ab55fdfedf32ddc6, type: 3}
+      damageNumber: {fileID: 1259023133563206875, guid: 949034d66e3f2274f97bed40b8c5def0, type: 3}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0.5, z: 0}
       word: BANG
