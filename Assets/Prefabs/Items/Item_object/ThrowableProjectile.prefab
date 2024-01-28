@@ -369,7 +369,7 @@ MonoBehaviour:
       damageNumber: {fileID: 1259023133563206875, guid: 43447c6b1d488a146bd8e53e4e48a590, type: 3}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0.5, z: 0}
-      word: 
+      word: FART
     soundEffectValue:
       clip: {fileID: 8300000, guid: 499373a859472a04a988ed5fb2a74064, type: 3}
       volume: 1

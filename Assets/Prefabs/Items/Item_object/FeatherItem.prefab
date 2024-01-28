@@ -152,7 +152,7 @@ MonoBehaviour:
       damageNumber: {fileID: 1259023133563206875, guid: fbb060ca9429eb747ab59a2164b640c9, type: 3}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0.5, z: 0}
-      word: 
+      word: ZEEEEE
     soundEffectValue:
       clip: {fileID: 8300000, guid: 229b502435bbf0a488086e0874aeb3c6, type: 3}
       volume: 0.769
