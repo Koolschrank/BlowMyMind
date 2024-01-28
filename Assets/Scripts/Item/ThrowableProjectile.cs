@@ -1,6 +1,7 @@
 using Player;
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Item
 {
@@ -13,6 +14,7 @@ namespace Item
         [SerializeField] private bool stopsOnCollision;
         [SerializeField] HitData damageData;
         [SerializeField] bool setPlayerVelocityToZero;
+        [FormerlySerializedAs("fartParticles")] [SerializeField] private DeathParticles deathParticles;
         bool onGround = false;
 
         public void SetOriginalPlayer(PlayerCharacter player)
@@ -31,9 +33,6 @@ namespace Item
                 triggerArea.enabled = true;
                 onGround = true;
             }
-
-
-            
         }
 
         // player collision
@@ -58,6 +57,7 @@ namespace Item
 
             Vector3 power = positionDiff * damageData.ForwardForce + transform.up * damageData.UpForce;
             player.TakeDamage(power, damageData);
+            Instantiate(deathParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
             return;
         }
