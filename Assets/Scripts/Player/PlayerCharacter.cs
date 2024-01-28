@@ -17,6 +17,7 @@ namespace Player
         public float moveSpeed = 10f;
         
         [SerializeField] private Item.Item defaultItem;
+        [SerializeField] SoundEffectValue actionSound;
         
         public Item.Item _currentItem;
 
@@ -58,6 +59,12 @@ namespace Player
         [HideInInspector] public Color color = Color.white;
         bool isGrounded = false;
         bool inputEnabled = false;
+        public SoundEffectValue[] walkSounds;
+        public float walkTimeForSound = 0.5f;
+        float walkTime = 0f;
+
+
+
         public void SetInputEnabled(bool enabled)
         {
             inputEnabled = enabled;
@@ -176,6 +183,12 @@ namespace Player
             {
                 body.transform.rotation = Quaternion.LookRotation(movementDirection);
                 lastRotation = body.transform.rotation;
+                walkTime -= delta * moveInput.magnitude;
+                if (walkTime <= 0)
+                {
+                    walkTime = walkTimeForSound;
+                    walkSounds[Random.Range(0, walkSounds.Length)].Play();
+                }
             }
             else
             {
@@ -209,6 +222,7 @@ namespace Player
                 return;
             if (context.performed)
             {
+                
                 Action();
             }
         }
@@ -262,8 +276,8 @@ namespace Player
                 Debug.Log("Item in use");
                 return;
             }
-                
-            
+
+            actionSound.Play();
 
             _currentItem.Use();
             _currentItem.Depleted += LoseItem;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Item;
 using Player;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ public class ThrowableItem : Item.Item
     {
         var projectileRb = Instantiate(projectilePrefab, transform.position + Vector3.up, Quaternion.identity, null).GetComponent<Rigidbody>();
         projectileRb.AddForce(Player.GetBody().forward * throwForceForward + Vector3.up * throwForceUp);// add body forward
+        projectileRb.GetComponent<ThrowableProjectile>().SetOriginalPlayer(Player);
         return true;
     }
 

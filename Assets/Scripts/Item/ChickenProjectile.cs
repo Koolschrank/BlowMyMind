@@ -9,6 +9,20 @@ namespace Item
         public PlayerCharacter Player { get; set; }
         
         [SerializeField] HitData hitData;
+
+        // ontrigger enter
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.gameObject.TryGetComponent(out PlayerCharacter player)) 
+                return;
+            
+            if(player != Player)
+            {
+                PlayerCollision(player);
+            }
+            
+            Invoke(nameof(DestroySelf), 7f);
+        }
         private void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.TryGetComponent(out PlayerCharacter player)) 
@@ -24,9 +38,9 @@ namespace Item
         
         public void PlayerCollision(PlayerCharacter player)
         {
-            var positionDiff = player.transform.position - transform.position;
+            var positionDiff = player.transform.position - Player.transform.position;
 
-            Vector3 power = positionDiff * hitData.ForwardForce + transform.up * hitData.UpForce;
+            Vector3 power = positionDiff * hitData.ForwardForce + Vector3.up * hitData.UpForce;
             player.TakeDamage(power, hitData);
             Destroy(gameObject);
         }

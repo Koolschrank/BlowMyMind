@@ -61,8 +61,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0.24}
+  m_Size: {x: 0.58, y: 1, z: 0.68}
+  m_Center: {x: 0, y: 0, z: 0.39}
 --- !u!114 &6471813800695569298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,8 +103,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1250752013587582549}
   - {fileID: 8493111710506786465}
@@ -133,9 +133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownTime: 0.5
   hitData:
-    forwardForce: 10
+    forwardForce: 40
     upForce: 10
-    damage: 25
+    damage: 60
     selfDamage: 0
     slowDownValues:
       hasSlowDown: 0
@@ -151,9 +151,12 @@ MonoBehaviour:
       damageNumber: {fileID: 1259023133563206875, guid: fbb060ca9429eb747ab59a2164b640c9, type: 3}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0.5, z: 0}
+      word: 
     soundEffectValue:
       clip: {fileID: 8300000, guid: 08b15283493d14e6ebacebed36250d4e, type: 3}
       volume: 0.769
+      hasPitchVariation: 0
+      pitchVariation: 0
     OnTakeDamage:
       m_PersistentCalls:
         m_Calls:
