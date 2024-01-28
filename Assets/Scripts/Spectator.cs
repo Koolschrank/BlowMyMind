@@ -11,6 +11,7 @@ public class Spectator : MonoBehaviour
     [SerializeField] private float timeForOneJump;
     [SerializeField] private float jumpHeight;
     [SerializeField] private float maxRandomJumpDelay;
+    [SerializeField] private ParticleSystem laughVFX;
     
     private Vector3 _startPosition;
     private Sequence _jumpSequence;
@@ -41,6 +42,7 @@ public class Spectator : MonoBehaviour
     
     private void Jump()
     {
+        laughVFX.Play();
         _jumpSequence = DOTween.Sequence();
         _jumpSequence.Append(transform.DOMoveY(_startPosition.y + jumpHeight, timeForOneJump * 0.5f)
             .SetEase(Ease.OutSine));
@@ -51,6 +53,7 @@ public class Spectator : MonoBehaviour
     [Button("StopJumping")]
     public void StopJumping()
     {
+        laughVFX.Stop();
         _jumpSequence?.Kill();
         transform.position = _startPosition;
     }

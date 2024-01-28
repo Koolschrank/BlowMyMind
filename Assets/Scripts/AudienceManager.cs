@@ -11,6 +11,8 @@ public class AudienceManager : MonoBehaviour
     [SerializeField] private Transform virtualCamera;
     [SerializeField] private float cameraRiseHeight;
     [SerializeField] private float cameraRiseTime;
+    [SerializeField] private float cameraLowerTime;
+    [SerializeField] private AudioSource audienceLaugh;
 
     private Vector3 _cameraStartPosition;
     private float _cameraMaxHeight;
@@ -25,6 +27,8 @@ public class AudienceManager : MonoBehaviour
     [Button("TestJumping")]
     public void TestJumpTrigger()
     {
+        audienceLaugh.Play();
+        
         if(_cameraRiseTween != null && _cameraRiseTween.active)
             return;
         
@@ -49,7 +53,7 @@ public class AudienceManager : MonoBehaviour
         _cameraLowerTween = DOVirtual.Float(startHeight, 0, cameraRiseTime, height =>
         {
             virtualCamera.position = _cameraStartPosition + Vector3.up * height;
-        }).SetEase(Ease.InOutQuad).OnComplete(() =>
+        }).SetEase(Ease.InQuad).OnComplete(() =>
         {
             StopAudienceJump?.Invoke();
         });
