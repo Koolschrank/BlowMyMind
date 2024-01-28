@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: StartProject
+  companyName: GlobalGameJam
+  productName: SlapHeads
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -735,6 +735,7 @@ PlayerSettings:
   webGLPowerPreference: 2
   scriptingDefineSymbols:
     Standalone: LiveScriptReload_Enabled;LiveScriptReload_IncludeInBuild_Enabled;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
+    WebGL: LiveScriptReload_Enabled;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;LiveScriptReload_IncludeInBuild_Enabled
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
