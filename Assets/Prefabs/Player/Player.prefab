@@ -4471,6 +4471,11 @@ MonoBehaviour:
   rigidBody: {fileID: 5304420718950057315}
   moveSpeed: 3000
   defaultItem: {fileID: -4497055413326994457, guid: 5c9302916c628b549a85f9e234b3e9b6, type: 3}
+  actionSound:
+    clip: {fileID: 8300000, guid: 1f3ddd93a29900d4ab0f9b69bf02d29e, type: 3}
+    volume: 0.625
+    hasPitchVariation: 1
+    pitchVariation: 0.1
   _currentItem: {fileID: 0}
   OnTakeDamage:
     m_PersistentCalls:
@@ -4517,6 +4522,8 @@ MonoBehaviour:
   soundEffectValueForTakingDamage:
     clip: {fileID: 8300000, guid: 9e5118926b9b04bcaba882035f4b5a18, type: 3}
     volume: 0.629
+    hasPitchVariation: 0
+    pitchVariation: 0
   hitFlashValue:
     hasHitFlash: 1
     meshes:
@@ -4572,6 +4579,14 @@ MonoBehaviour:
   hand: {fileID: 7786977794532324148}
   velocityToWalk: 0.1
   healthRegen: 1
+  title: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
+  walkSounds:
+  - clip: {fileID: 8300000, guid: 4cf47ad5b31ea6640addd4045fa77c8b, type: 3}
+    volume: 0.2
+    hasPitchVariation: 1
+    pitchVariation: 0.2
+  walkTimeForSound: 0.2
 --- !u!136 &4736350082295370191
 CapsuleCollider:
   m_ObjectHideFlags: 0

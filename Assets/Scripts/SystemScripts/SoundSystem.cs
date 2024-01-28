@@ -17,20 +17,46 @@ public class SoundSystem : MonoBehaviour
     
     }
 
+    public void SetPitch()
+    {
+        audioSource.pitch = 1;
+    }
+
+    public void SetPitch(float pitch)
+    {
+        audioSource.pitch = pitch;
+    }
+
     public void PlaySoundEffect(SoundEffectValue soundEffectValue)
     {
         audioSource.PlayOneShot(soundEffectValue.Clip, soundEffectValue.Volume);
     }
 }
 
+[Serializable] 
+public class SoundEffectValue_Array
+{
+    [SerializeField] SoundEffectValue[] soundEffectValues;
 
-[Serializable]
+    public void Play()
+    {
+        // play random sound effect
+        soundEffectValues[UnityEngine.Random.Range(0, soundEffectValues.Length)].Play();
+        
+    }
+}
+
+
+
+    [Serializable]
 public class SoundEffectValue
 {
     
     [SerializeField] AudioClip clip;
     [Range(0,1)]
     [SerializeField] float volume;
+    [SerializeField] bool hasPitchVariation;
+    [SerializeField] float pitchVariation;
 
     // getters
 
@@ -47,13 +73,24 @@ public class SoundEffectValue
 
     public SoundEffectValue(AudioClip clip, float volume)
     {
+        
+
         this.clip = clip;
         this.volume = volume;
     }
 
     public void Play()
     {
-        if(volume ==0 || clip == null)
+        if (hasPitchVariation)
+        {
+               SoundSystem.instance?.SetPitch(UnityEngine.Random.Range(1 - pitchVariation, 1 + pitchVariation));
+        }
+        else
+        {
+               SoundSystem.instance?.SetPitch();
+        }
+
+            if (volume ==0 || clip == null)
             return;
         SoundSystem.instance?.PlaySoundEffect(this);
     }

@@ -94,7 +94,9 @@ namespace SystemScripts
             playerConnectors[players.Count].ConnectListenersToPlayer(newPlayer);
             playerLivePoints[players.Count].SetUiPointsColor(playerShirtMaterials[players.Count].color);
             players.Add(newPlayer);
-           
+            newPlayer.GetComponent<PlayerCharacter>().SetInputEnabled(gameStarted);
+
+
         }
 
         public void Respawn(GameObject playerToReSpawn)
