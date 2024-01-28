@@ -22,6 +22,7 @@ public class VictoryScreen : MonoBehaviour
 
     public void OnRestartButtonPressed()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneSystem.instance.ReloadSceneWithTransition();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
