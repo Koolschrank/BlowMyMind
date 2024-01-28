@@ -9,6 +9,8 @@ public class Spectator : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private float maxRandomJumpDelay;
     [SerializeField] private ParticleSystem laughVFX;
+    [SerializeField] private Material[] faceMaterials;
+    [SerializeField] private MeshRenderer playerRenderer;
     
     private Vector3 _startPosition;
     private Sequence _jumpSequence;
@@ -16,6 +18,9 @@ public class Spectator : MonoBehaviour
     private void Awake()
     {
         _startPosition = transform.position;
+        var playerMaterials = playerRenderer.materials;
+        playerMaterials[1] = faceMaterials[Random.Range(0, faceMaterials.Length)];
+        playerRenderer.materials = playerMaterials;
     }
 
     private void OnEnable()
