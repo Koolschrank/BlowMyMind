@@ -16,6 +16,24 @@ namespace SystemScripts
         [SerializeField] PlayerConnector[] playerConnectors;
         List<GameObject> players = new List<GameObject>();
         [SerializeField] public Transform[] spawnPoints;
+        [SerializeField] public GameObject StartUI;
+        bool gameStarted = false;
+
+        public void StartGame()
+        {
+            gameStarted = true;
+            StartUI.SetActive(false);
+
+            foreach (var player in players)
+            {
+                player.GetComponent<PlayerCharacter>().SetInputEnabled(true);
+            }
+        }
+
+        public bool IsGameStarted()
+        {
+            return gameStarted;
+        }
     
         private void Awake()
         {
@@ -54,6 +72,7 @@ namespace SystemScripts
             // random position
             // spawn player at spanw point
             newPlayer.transform.position = spawnPoints[players.Count].position;
+            newPlayer.transform.rotation = spawnPoints[players.Count].rotation;
             
 
 

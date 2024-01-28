@@ -112,9 +112,10 @@ MonoBehaviour:
   stopsOnCollision: 1
   damageData:
     forwardForce: 0
-    upForce: 500
+    upForce: 300
     damage: 25
     selfDamage: 0
+  setPlayerVelocityToZero: 1
 --- !u!1 &5539795898357902498
 GameObject:
   m_ObjectHideFlags: 0
