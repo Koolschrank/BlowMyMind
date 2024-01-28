@@ -39,6 +39,7 @@ namespace Player
         public List<FaceData> availableFaces;
         public DamageNumberValue damageNumberValue;
         [SerializeField] private LaughParticles laughParticles;
+        [SerializeField] private ParticleSystemRenderer laughRender;
         
         public float groundedDrag = 1f;
         public float airDrag = 0f;
@@ -101,6 +102,9 @@ namespace Player
         public void SetClothsMaterials(Material pantsMaterial, Material shirtMaterial)
         {
             var materials = bodyMesh.materials;
+            var laughMaterial = laughRender.material;
+            laughMaterial.color = shirtMaterial.color;
+            laughRender.material = laughMaterial;
             materials[2] = shirtMaterial;
             materials[3] = pantsMaterial;
             bodyMesh.materials = materials;
