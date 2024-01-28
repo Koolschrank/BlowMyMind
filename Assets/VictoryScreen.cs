@@ -14,11 +14,12 @@ public class VictoryScreen : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void Activate(string winnerTitle = "better ")
+    public void Activate(string winnerTitle, Color winnerColor)
     {
         TimeManager.instance.PauseGame();
         gameObject.SetActive(true);
-        winnerText.text = $"{winnerTitle} won!";
+        winnerText.color = winnerColor;
+        winnerText.text = $"Player {winnerTitle} won!";
     }
 
     public void OnRestartButtonPressed()

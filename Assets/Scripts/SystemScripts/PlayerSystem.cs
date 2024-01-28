@@ -81,7 +81,7 @@ namespace SystemScripts
             // spawn player at spanw point
             newPlayer.transform.position = spawnPoints[players.Count].position;
             newPlayer.transform.rotation = spawnPoints[players.Count].rotation;
-            
+            newPlayer.GetComponent<PlayerCharacter>().title = (players.Count + 1).ToString();
 
 
             if (players.Count >= playerConnectors.Length)
@@ -137,9 +137,9 @@ namespace SystemScripts
 
         public void PlayerWin(PlayerCharacter playerToWin)
         {
-            victoryScreen.Activate(playerToWin != null ? playerToWin.name : "Nobody");
+            victoryScreen.Activate(playerToWin != null ? playerToWin.title : "Nobody", playerToWin.color);
             // debug log
-            Debug.Log("Player " + (playerToWin != null ? playerToWin.name : "null") + " wins!");
+            Debug.Log("Player " + (playerToWin != null ? playerToWin.title : "null") + " wins!");
         }
     }
 
