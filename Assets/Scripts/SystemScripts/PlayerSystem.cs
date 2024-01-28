@@ -18,6 +18,8 @@ namespace SystemScripts
         List<GameObject> players = new List<GameObject>();
         [SerializeField] public Transform[] spawnPoints;
         [SerializeField] public GameObject StartUI;
+        [SerializeField] public SoundEffectValue playerDeathSound;
+        [SerializeField] public SlowDownValue playerDeathSlowDown;
         bool gameStarted = false;
 
         //unity event when player dies
@@ -101,12 +103,17 @@ namespace SystemScripts
             playerToReSpawn.transform.position = pos;
 
         }
- 
+
+
 
         public bool CheckForWinner()
         {
             // player die event
             OnPlayerDie.Invoke();
+            playerDeathSlowDown.Play();
+            playerDeathSound.Play();
+
+
 
             PlayerCharacter playerToWin = null;
             int alivePlayers = 0;
