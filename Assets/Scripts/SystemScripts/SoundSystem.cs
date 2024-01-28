@@ -41,7 +41,7 @@ public class SoundEffectValue_Array
     public void Play()
     {
         // play random sound effect
-        soundEffectValues[UnityEngine.Random.Range(0, soundEffectValues.Length)].Play();
+        soundEffectValues[UnityEngine.Random.Range(0, soundEffectValues.Length-1)].Play();
         
     }
 }

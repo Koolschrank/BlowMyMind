@@ -7,6 +7,10 @@ using UnityEngine;
 public class ItemSpawner : MonoBehaviour
 {
     public float spawnTime = 5f;
+    public float spawnReduceTime = 0.1f;
+    public float spawnReduceTimeDelay = 10f;
+    public float cap = 1f;
+    float delayCounter = 0f;
     public GameObject[] items;
     public float[] probabilities;
 
@@ -46,6 +50,14 @@ public class ItemSpawner : MonoBehaviour
         {
             _spawnTimeCounter = 0f;
             SpawnItem();
+        }
+
+        // reduce spawn time
+        delayCounter += Time.deltaTime;
+        if (delayCounter >= spawnReduceTimeDelay)
+        {
+            delayCounter = 0f;
+            spawnTime = Mathf.Max(cap, spawnTime - spawnReduceTime) ;
         }
         
     }

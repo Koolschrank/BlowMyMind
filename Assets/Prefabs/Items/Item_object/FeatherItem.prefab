@@ -153,7 +153,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0.5, z: 0}
       word: 
     soundEffectValue:
-      clip: {fileID: 8300000, guid: 08b15283493d14e6ebacebed36250d4e, type: 3}
+      clip: {fileID: 8300000, guid: 229b502435bbf0a488086e0874aeb3c6, type: 3}
       volume: 0.769
       hasPitchVariation: 0
       pitchVariation: 0

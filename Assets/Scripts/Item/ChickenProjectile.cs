@@ -9,28 +9,33 @@ namespace Item
         public PlayerCharacter Player { get; set; }
         
         [SerializeField] HitData hitData;
-
+        bool hascollided = false;
         // ontrigger enter
         private void OnTriggerEnter(Collider other)
         {
+            if (hascollided) return;
             if (!other.gameObject.TryGetComponent(out PlayerCharacter player)) 
                 return;
             
             if(player != Player)
             {
                 PlayerCollision(player);
+                hascollided = true;
             }
+
             
             Invoke(nameof(DestroySelf), 7f);
         }
         private void OnCollisionEnter(Collision other)
         {
+            if (hascollided) return;
             if (!other.gameObject.TryGetComponent(out PlayerCharacter player)) 
                 return;
             
             if(player != Player)    
             {
                 PlayerCollision(player);
+                hascollided = true;
             }
             
             Invoke(nameof(DestroySelf), 7f);

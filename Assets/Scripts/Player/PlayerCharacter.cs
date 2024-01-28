@@ -11,6 +11,7 @@ namespace Player
 {
     public class PlayerCharacter : MonoBehaviour
     {
+        [SerializeField] SoundEffectValue_Array soundesWhenHit;
         public PlayerStats stats;
         public FloatValue lives;
         public Rigidbody rigidBody;
@@ -41,6 +42,7 @@ namespace Player
         public DamageNumberValue damageNumberValue;
         [SerializeField] private LaughParticles laughParticles;
         [SerializeField] private ParticleSystemRenderer laughRender;
+        [SerializeField] private DeathParticles deathParticles;
         
         public float groundedDrag = 1f;
         public float airDrag = 0f;
@@ -236,6 +238,7 @@ namespace Player
                 OnTakeDamage.Invoke();
             }
             hitFlashValue.StartHitFlash();
+            soundesWhenHit.Play();
 
             //damageNumberValue.Play(transform);
         }
@@ -328,6 +331,9 @@ namespace Player
         public void Die()
         {
             damage.Value = damage.Value_min;
+            var deathPosition = transform.position;
+            var newDeathParticles = Instantiate(deathParticles, deathPosition, Quaternion.Euler(-90, 0, 0));
+            newDeathParticles.GetComponent<DeathParticles>().SetColor(color);
             Debug.Log("Player died!");
             // destroy game object
             PlayerSystem.instance.Respawn(gameObject);
@@ -335,11 +341,10 @@ namespace Player
             {
                 SetFaceMaterials(availableFaces[Random.Range(0, availableFaces.Count)]);
             }
+
             rigidBody.velocity = Vector3.zero;
             lives.Value -= 1f;
-
             PlayerSystem.instance.CheckForWinner();
-
         }
     }
 }
