@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Item;
+using MoreMountains.Feedbacks;
 using SystemScripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -34,7 +35,7 @@ namespace Player
         public FloatValue damage;
         
         [Header("Visuals")]
-        [SerializeField] private SkinnedMeshRenderer bodyMesh;
+        [SerializeField] public SkinnedMeshRenderer bodyMesh;
         public Transform body;
         public bool isFaceRandomized = true;
         public bool isFaceRandomizedOnDeath = true;
@@ -43,6 +44,7 @@ namespace Player
         [SerializeField] private LaughParticles laughParticles;
         [SerializeField] private ParticleSystemRenderer laughRender;
         [SerializeField] private DeathParticles deathParticles;
+        [SerializeField] public MMF_Player hitShake;
         
         public float groundedDrag = 1f;
         public float airDrag = 0f;
@@ -239,6 +241,8 @@ namespace Player
             }
             hitFlashValue.StartHitFlash();
             soundesWhenHit.Play();
+
+            hitShake.PlayFeedbacks();
 
             //damageNumberValue.Play(transform);
         }
