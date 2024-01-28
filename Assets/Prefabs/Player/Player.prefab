@@ -5042,7 +5042,7 @@ MonoBehaviour:
   animator: {fileID: 3473605073319321743}
   hand: {fileID: 7786977794532324148}
   velocityToWalk: 0.1
-  healthRegen: 1
+  healthRegen: 3
   title: 1
   color: {r: 1, g: 1, b: 1, a: 1}
   walkSounds:

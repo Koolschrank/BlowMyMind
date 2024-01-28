@@ -341,7 +341,7 @@ namespace Player
             newDeathParticles.GetComponent<DeathParticles>().SetColor(color);
             Debug.Log("Player died!");
             // destroy game object
-            PlayerSystem.instance.Respawn(gameObject);
+           
             if (isFaceRandomizedOnDeath)
             {
                 SetFaceMaterials(availableFaces[Random.Range(0, availableFaces.Count)]);
@@ -349,6 +349,15 @@ namespace Player
 
             rigidBody.velocity = Vector3.zero;
             lives.Value -= 1f;
+
+            if (lives.Value <= 0)
+            {
+                // stay dead
+            }
+            else
+            {
+                PlayerSystem.instance.Respawn(gameObject); ;
+            }
             PlayerSystem.instance.CheckForWinner();
         }
     }

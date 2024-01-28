@@ -391,7 +391,7 @@ MonoBehaviour:
   coolDownTime: 0.5
   deathParticles: {fileID: 3599696260236611811, guid: 7f674becbf88bb04ba39df26783c823e, type: 3}
   hitData:
-    forwardForce: 300
+    forwardForce: 400
     upForce: 20
     damage: 0
     selfDamage: 10
