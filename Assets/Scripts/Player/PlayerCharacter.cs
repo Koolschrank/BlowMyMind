@@ -181,14 +181,34 @@ namespace Player
             }
         }
 
+        public void TakeDamage()
+        {
+            
+            // unity event in not empty
+            if (OnTakeDamage != null)
+            {
+                OnTakeDamage.Invoke();
+            }
+            hitFlashValue.StartHitFlash();
+            damageNumberValue.Play(transform);
+        }
+        
+        public void TakeDamage(float amount)
+        {
+            if (amount <= 0)
+                return;
+            TakeDamage();
+            damage.Value += amount;
+        }
+        
         public void TakeDamage(Vector3 power, HitData hitData)
         {
             var knockBackMultiplier = stats.GetKnockBackMultiplierByDamage(damage);
             Debug.Log("Damage " + hitData.Damage);
             Debug.Log("Knockback " + knockBackMultiplier);
             rigidBody.AddForce(power * knockBackMultiplier);
-            TakeDamage();
             damage.Value += hitData.Damage;
+            TakeDamage();
         }
 
 
@@ -217,18 +237,6 @@ namespace Player
         {
             PickUpItem(defaultItem);
          
-        }
-
-        public void TakeDamage()
-        {
-            
-            // unity event in not empty
-            if (OnTakeDamage != null)
-            {
-                OnTakeDamage.Invoke();
-            }
-            hitFlashValue.StartHitFlash();
-            damageNumberValue.Play(transform);
         }
 
         public void MoveInput(Vector2 direction)

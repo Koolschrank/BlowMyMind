@@ -24,7 +24,7 @@ namespace Item
             
             Vector3 power = transform.forward * hitData.ForwardForce + transform.up * hitData.UpForce;
             nearbyPlayer.TakeDamage(power, hitData);
-                
+            Player.TakeDamage(hitData.SelfDamage);
             hitData.ActivateEffects();
         }
 

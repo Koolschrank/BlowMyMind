@@ -135,6 +135,7 @@ MonoBehaviour:
     forwardForce: 400
     upForce: 50
     damage: 0
+    selfDamage: 15
   hitBox: {fileID: 4555138265921317225}
 --- !u!1001 &3191359549953911488
 PrefabInstance:
