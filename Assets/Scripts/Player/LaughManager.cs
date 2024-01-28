@@ -18,6 +18,7 @@ public class LaughManager : MonoBehaviour
     [SerializeField] private float threshold3;
     [SerializeField] private float maxVolume;
     [SerializeField] private float fadeTime;
+    [SerializeField] private PlayerCharacter playerCharacter;
 
     private float _threshold1Up;
     private float _threshold1Down;
@@ -27,7 +28,7 @@ public class LaughManager : MonoBehaviour
     private float _threshold3Down;
     
     private int _currentLaughLevel;
-    private PlayerCharacter _playerCharacter;
+    
 
     private void Awake()
     {
@@ -35,7 +36,7 @@ public class LaughManager : MonoBehaviour
         _threshold2Down = threshold2 - 5f;
         _threshold3Up = threshold3 + 5f;
         _threshold3Down = threshold3 - 5f;
-        _playerCharacter = GetComponent<PlayerCharacter>();
+        playerCharacter = GetComponent<PlayerCharacter>();
     }
 
     public void OnDamageChange()
@@ -43,12 +44,12 @@ public class LaughManager : MonoBehaviour
         if(!useLaugh)
             return;
 
-        var newValue = _playerCharacter.damage.Value;
+        var newValue = playerCharacter.damage.Value;
 
         switch (_currentLaughLevel)
         {
             case 0:
-                if (newValue > _threshold1Up)
+                if (newValue > threshold1 + 2)
                 {
                     _currentLaughLevel = 1;
                     UpdateLaugh();
@@ -61,7 +62,7 @@ public class LaughManager : MonoBehaviour
                     UpdateLaugh();
                     break;
                 }
-                if (newValue < _threshold1Down)
+                if (newValue < threshold1)
                 {
                     _currentLaughLevel = 0;
                     UpdateLaugh();

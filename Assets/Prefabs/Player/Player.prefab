@@ -5045,11 +5045,12 @@ MonoBehaviour:
   laugh2: {fileID: 3780342032858821021}
   laugh3: {fileID: 4755017518834783051}
   useLaugh: 1
-  threshold1: 0
+  threshold1: 15
   threshold2: 20
   threshold3: 60
   maxVolume: 0.6
   fadeTime: 1
+  playerCharacter: {fileID: 1250711279703891248}
 --- !u!1 &8959307645654106344
 GameObject:
   m_ObjectHideFlags: 0

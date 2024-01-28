@@ -13,6 +13,7 @@ public class GroundCheck : MonoBehaviour
     // update
     private void Update()
     {
+        if (playerCharacter == null) return;
         // check if player is grounded
         if (IsGrounded())
         {
