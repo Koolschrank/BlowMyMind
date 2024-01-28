@@ -188,6 +188,7 @@ public class DamageNumberValue
     [SerializeField] DamageNumber damageNumber;
     [SerializeField] Transform spawnPoint;
     [SerializeField] Vector3 offset;
+    [SerializeField] String word;
 
 
 
