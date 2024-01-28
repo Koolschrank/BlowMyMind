@@ -19,7 +19,7 @@ public class ThrowableItem : Item.Item
     public override bool Throw()
     {
         var projectileRb = Instantiate(projectilePrefab, transform.position + Vector3.up, Quaternion.identity, null).GetComponent<Rigidbody>();
-        projectileRb.AddForce(Player.GetBody().forward * throwForceForward + Player.GetBody().up * throwForceUp);// add body forward
+        projectileRb.AddForce(Player.GetBody().forward * throwForceForward + Vector3.up * throwForceUp);// add body forward
         return true;
     }
 
