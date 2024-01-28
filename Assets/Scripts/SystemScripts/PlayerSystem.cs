@@ -119,7 +119,7 @@ namespace SystemScripts
 
             foreach (var listener in healthListener)
             {
-                playerMove.knockBackMultiplier.AddListener(listener);
+                playerMove.damage.AddListener(listener);
             }
         }
     }

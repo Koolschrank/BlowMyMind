@@ -48,7 +48,7 @@ namespace Item
         }
     }
     
-    // serializeable class for hit with forwarde force up forece and damage
+    // Serializable class for hit with forward force up force and damage
     [Serializable]
     public class HitData
     {

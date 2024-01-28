@@ -3450,14 +3450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518507ec97accfb4695c58a0c78b4387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 188576632589700030}
-  isFaceRandomized: 1
-  availableFaces:
-  - {fileID: 11400000, guid: 457b81f3a5e1e43c983671669cd6d15a, type: 2}
-  - {fileID: 11400000, guid: 52dce004c7c1b43dcbfcc999d7c076e4, type: 2}
-  - {fileID: 11400000, guid: 6545ceae8f83749d082bd391083f608a, type: 2}
-  - {fileID: 11400000, guid: bea477860b069414faf9df01d9132614, type: 2}
-  bodyMesh: {fileID: 7852606779742955613}
+  stats: {fileID: 11400000, guid: 2aa4b8164484e4d4a8ba0c034a794ba2, type: 2}
   lives:
     value_current: 5
     value_min: 0
@@ -3481,6 +3474,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     listeners: []
+  rigidBody: {fileID: 5304420718950057315}
   moveSpeed: 3000
   defaultItem: {fileID: -4497055413326994457, guid: 5c9302916c628b549a85f9e234b3e9b6, type: 3}
   _currentItem: {fileID: 0}
@@ -3536,11 +3530,11 @@ MonoBehaviour:
     - {fileID: 2895450489561477158}
     hitMaterial: {fileID: 7933299137048178034, guid: a9f670f4eae962b4683c35ae3d1db878, type: 3}
     hitFlashTime: 0.1
-  knockBackMultiplier:
+  damage:
     value_current: 0
     value_min: 0
-    value_max: 300
-    resetOnStart: 0
+    value_max: 100
+    resetOnStart: 1
     noLossEventOnEmpty: 0
     noGainEventOnFull: 0
     valueChange:
@@ -3559,6 +3553,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     listeners: []
+  bodyMesh: {fileID: 7852606779742955613}
+  body: {fileID: 188576632589700030}
+  isFaceRandomized: 1
+  isFaceRandomizedOnDeath: 1
+  availableFaces:
+  - {fileID: 11400000, guid: 457b81f3a5e1e43c983671669cd6d15a, type: 2}
+  - {fileID: 11400000, guid: 52dce004c7c1b43dcbfcc999d7c076e4, type: 2}
+  - {fileID: 11400000, guid: 6545ceae8f83749d082bd391083f608a, type: 2}
+  - {fileID: 11400000, guid: bea477860b069414faf9df01d9132614, type: 2}
   damageNumberValue:
     hasDamageNumber: 1
     damageNumber: {fileID: 1259023133563206875, guid: b1e674f6dbf194d4ab55fdfedf32ddc6, type: 3}
@@ -3707,6 +3710,10 @@ PrefabInstance:
     - target: {fileID: 3496300993697802508, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909576407918247423, guid: 3b01a3fe12e014691a49cae5bf6eeec7, type: 3}
+      propertyPath: lengthInSec
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
