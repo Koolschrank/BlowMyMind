@@ -1,10 +1,13 @@
 using System.Collections;
+using Player;
 using UnityEngine;
 
 public class AppearanceChange : MonoBehaviour
 {
-    [SerializeField] private float changeTime;
-
+    [SerializeField] private float changeTime = 2;
+    [SerializeField] private SkinnedMeshRenderer bodyMesh;
+    [SerializeField] private FaceData[] faces;
+    
     private WaitForSeconds _changeDelay;
     
     void Start()
@@ -17,7 +20,12 @@ public class AppearanceChange : MonoBehaviour
     {
         while (true)
         {
-            // Todo: Add material change here
+            var faceData = faces[Random.Range(0, faces.Length)];
+            var materials = bodyMesh.materials;
+            materials[0] = faceData.skinMaterial;
+            materials[1] = faceData.faceMaterial;
+            materials[4] = faceData.hairMaterial;
+            bodyMesh.materials = materials;
             yield return _changeDelay;
         }
     }
