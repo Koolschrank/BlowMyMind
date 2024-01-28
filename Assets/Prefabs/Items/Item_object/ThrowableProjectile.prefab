@@ -352,8 +352,8 @@ MonoBehaviour:
   stopsOnCollision: 1
   damageData:
     forwardForce: 0
-    upForce: 300
-    damage: 25
+    upForce: 50
+    damage: 15
     selfDamage: 0
     slowDownValues:
       hasSlowDown: 0
@@ -369,7 +369,6 @@ MonoBehaviour:
       damageNumber: {fileID: 1259023133563206875, guid: 43447c6b1d488a146bd8e53e4e48a590, type: 3}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0.5, z: 0}
-      word: FART
     soundEffectValue:
       clip: {fileID: 8300000, guid: 08b15283493d14e6ebacebed36250d4e, type: 3}
       volume: 0.769
@@ -502,7 +501,6 @@ MonoBehaviour:
       damageNumber: {fileID: 0}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0, z: 0}
-      word: 
     soundEffectValue:
       clip: {fileID: 0}
       volume: 0

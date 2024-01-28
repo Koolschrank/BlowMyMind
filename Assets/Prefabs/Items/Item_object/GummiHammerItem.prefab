@@ -372,8 +372,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownTime: 0.5
   hitData:
-    forwardForce: 200
-    upForce: 100
+    forwardForce: 40
+    upForce: 30
     damage: 10
     selfDamage: 0
     slowDownValues:
@@ -390,7 +390,6 @@ MonoBehaviour:
       damageNumber: {fileID: 1259023133563206875, guid: ec6707811297e2243886827ef81ed331, type: 3}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0.5, z: 0}
-      word: BOING
     soundEffectValue:
       clip: {fileID: 8300000, guid: 08b15283493d14e6ebacebed36250d4e, type: 3}
       volume: 0.769

@@ -442,9 +442,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownTime: 0.5
   hitData:
-    forwardForce: 200
-    upForce: 50
-    damage: 0.5
+    forwardForce: 25
+    upForce: 25
+    damage: 20
     selfDamage: 0
     slowDownValues:
       hasSlowDown: 0
