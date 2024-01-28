@@ -4446,7 +4446,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundesWhenHit:
-    soundEffectValues: []
+    soundEffectValues:
+    - clip: {fileID: 8300000, guid: cabeec05657ab1a43bab8d9bec495151, type: 3}
+      volume: 0.6
+      hasPitchVariation: 1
+      pitchVariation: 0.1
+    - clip: {fileID: 8300000, guid: 229b502435bbf0a488086e0874aeb3c6, type: 3}
+      volume: 0.6
+      hasPitchVariation: 1
+      pitchVariation: 0.1
+    - clip: {fileID: 8300000, guid: 296ec7d1686e6934baded1833de2009a, type: 3}
+      volume: 0.6
+      hasPitchVariation: 1
+      pitchVariation: 0.1
+    - clip: {fileID: 8300000, guid: 19f61f81c6eb48347b1219fc8c0f1bf1, type: 3}
+      volume: 0.6
+      hasPitchVariation: 1
+      pitchVariation: 0.1
   stats: {fileID: 11400000, guid: d137152f2dccbfe449d4089934e7fd12, type: 2}
   lives:
     value_current: 5
@@ -4643,8 +4659,12 @@ MonoBehaviour:
   healthRegen: 1
   title: 1
   color: {r: 1, g: 1, b: 1, a: 1}
-  walkSounds: []
-  walkTimeForSound: 0.5
+  walkSounds:
+  - clip: {fileID: 8300000, guid: 4cf47ad5b31ea6640addd4045fa77c8b, type: 3}
+    volume: 0.8
+    hasPitchVariation: 1
+    pitchVariation: 0.2
+  walkTimeForSound: 0.2
 --- !u!136 &4736350082295370191
 CapsuleCollider:
   m_ObjectHideFlags: 0
