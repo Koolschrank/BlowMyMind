@@ -4445,6 +4445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518507ec97accfb4695c58a0c78b4387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundesWhenHit:
+    soundEffectValues: []
   stats: {fileID: 11400000, guid: d137152f2dccbfe449d4089934e7fd12, type: 2}
   lives:
     value_current: 5
@@ -4472,6 +4474,11 @@ MonoBehaviour:
   rigidBody: {fileID: 5304420718950057315}
   moveSpeed: 3000
   defaultItem: {fileID: -4497055413326994457, guid: 5c9302916c628b549a85f9e234b3e9b6, type: 3}
+  actionSound:
+    clip: {fileID: 0}
+    volume: 0
+    hasPitchVariation: 0
+    pitchVariation: 0
   _currentItem: {fileID: 0}
   OnTakeDamage:
     m_PersistentCalls:
@@ -4518,6 +4525,8 @@ MonoBehaviour:
   soundEffectValueForTakingDamage:
     clip: {fileID: 8300000, guid: 9e5118926b9b04bcaba882035f4b5a18, type: 3}
     volume: 0.629
+    hasPitchVariation: 0
+    pitchVariation: 0
   hitFlashValue:
     hasHitFlash: 1
     meshes:
@@ -4621,6 +4630,8 @@ MonoBehaviour:
     word: 
   laughParticles: {fileID: 2477441121432417290}
   laughRender: {fileID: 195952589314430100}
+  deathParticles: {fileID: 8122940148288087871, guid: 5cf45268fe62ebe41b2c234e98b517bb, type: 3}
+  hitShake: {fileID: 6896135858179129169}
   groundedDrag: 5
   airDrag: 0.2
   head: {fileID: 7572076827738196785}
@@ -4632,6 +4643,8 @@ MonoBehaviour:
   healthRegen: 1
   title: 1
   color: {r: 1, g: 1, b: 1, a: 1}
+  walkSounds: []
+  walkTimeForSound: 0.5
 --- !u!136 &4736350082295370191
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4667,9 +4680,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd48f741673ad5842bfae927dc3bf623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laugh1: {fileID: 8027896945026242605}
-  laugh2: {fileID: 3780342032858821021}
-  laugh3: {fileID: 4755017518834783051}
+  laugh1: {fileID: 0}
+  laugh2: {fileID: 0}
+  laugh3: {fileID: 0}
   useLaugh: 1
   threshold1: 15
   threshold2: 20
