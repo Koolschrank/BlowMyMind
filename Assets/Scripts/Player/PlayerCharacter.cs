@@ -30,8 +30,9 @@ namespace Player
         public HitFlashValue hitFlashValue;
 
         public FloatValue damage;
-        
-        [Header("Visuals")]
+
+        [Header("Visuals")] 
+        [SerializeField] private List<Rigidbody> bonesToStun;
         [SerializeField] private SkinnedMeshRenderer bodyMesh;
         public Transform body;
         public bool isFaceRandomized = true;
@@ -47,7 +48,8 @@ namespace Player
         public Animator animator;
         public Transform hand;
         public float velocityToWalk = 0.1f;
-        
+
+        private bool isStunned = false;
         bool isGrounded = false;
         public void SetGrounded(bool grounded)
         { 
@@ -143,7 +145,7 @@ namespace Player
 
         public void MoveUpdate(float delta)
         {
-            if (!isGrounded) return;
+            if (!isGrounded || isStunned) return;
 
             Vector3 movementDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
             rigidBody.AddForce(movementDirection * movePower * moveSpeed * delta);
@@ -206,13 +208,43 @@ namespace Player
             var knockBackMultiplier = stats.GetKnockBackMultiplierByDamage(damage);
             Debug.Log("Damage " + hitData.Damage);
             Debug.Log("Knockback " + knockBackMultiplier);
+            if (power != Vector3.zero)
+            {
+                Stun();
+            }
             rigidBody.AddForce(power * knockBackMultiplier);
             damage.Value += hitData.Damage;
             TakeDamage();
         }
 
 
+        public void Stun()
+        {
+            //GetComponent<CapsuleCollider>().enabled = false;
+           // GetComponent<Animator>().enabled = false;
+            var stunDuration = 2.0f;//stats.GetStunDurationByDamage(damage);
+            if (stunDuration <= 0)
+                return;
+            foreach (var bone in bonesToStun)
+            {
+                bone.isKinematic = false;
+            }
+            isStunned = true;
+            Invoke("Unstun", stunDuration);
+        }
 
+
+        public void Unstun()
+        {
+            //GetComponent<Animator>().enabled = true;
+           // GetComponent<CapsuleCollider>().enabled = true;
+            foreach (var bone in bonesToStun)
+            {
+                bone.isKinematic = true;
+            }
+            isStunned = false;
+        }
+        
         public void Action()
         {
             if(_currentItem.InUse)

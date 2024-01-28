@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8626125891512384958}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hand.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1992726525061010192}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hand.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 211987312191571667}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: HandPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,9 +552,9 @@ GameObject:
   - component: {fileID: 8773613214383887922}
   - component: {fileID: 4002194371603576438}
   - component: {fileID: 8737134016142374852}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: shin.R
-  m_TagString: Untagged
+  m_TagString: RagdollBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -667,7 +667,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -745,9 +745,9 @@ GameObject:
   - component: {fileID: 8402182069803296022}
   - component: {fileID: 7359320968246071049}
   - component: {fileID: 4917646579767672966}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: upper_arm.R
-  m_TagString: Untagged
+  m_TagString: RagdollBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,7 +860,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -876,9 +876,9 @@ GameObject:
   - component: {fileID: 2574443156473188954}
   - component: {fileID: 4912474954989559166}
   - component: {fileID: 5007836318104565166}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: shin.L
-  m_TagString: Untagged
+  m_TagString: RagdollBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -991,7 +991,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -1004,7 +1004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1350806065114174796}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: spine.006_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3598119266221506431}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: ArmControl.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1099,7 +1099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 354807219413938863}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: foot.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,7 +1132,7 @@ GameObject:
   - component: {fileID: 2652371035466254212}
   - component: {fileID: 2601211892818724502}
   - component: {fileID: 1478111738428168120}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1213,7 +1213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2510751252227535586}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: ArmControl.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1278,9 +1278,9 @@ GameObject:
   - component: {fileID: 6994067646610736645}
   - component: {fileID: 6182457493007732231}
   - component: {fileID: 7775332363352792513}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: thigh.R
-  m_TagString: Untagged
+  m_TagString: RagdollBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1393,7 +1393,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -1406,7 +1406,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6304394393129775720}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hand.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1509,9 +1509,9 @@ GameObject:
   - component: {fileID: 2721140494864688732}
   - component: {fileID: 8706326597803041952}
   - component: {fileID: 2170396236646349753}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: thigh.L
-  m_TagString: Untagged
+  m_TagString: RagdollBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1624,7 +1624,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -1637,7 +1637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9220945395576325398}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: hand.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1671,9 +1671,9 @@ GameObject:
   - component: {fileID: 5291160901616429405}
   - component: {fileID: 893680230094146526}
   - component: {fileID: 1697923767654133125}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: spine.002
-  m_TagString: Untagged
+  m_TagString: RagdollBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1785,7 +1785,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -1801,9 +1801,9 @@ GameObject:
   - component: {fileID: 524441423808789268}
   - component: {fileID: 8142028774143955233}
   - component: {fileID: 2278952288353515571}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: forearm.R
-  m_TagString: Untagged
+  m_TagString: RagdollBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1916,7 +1916,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -1931,7 +1931,7 @@ GameObject:
   - component: {fileID: 1298312165625817167}
   - component: {fileID: 4659047734392647870}
   - component: {fileID: 5000653820840034588}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2593,7 +2593,7 @@ GameObject:
   - component: {fileID: 648996882211375676}
   - component: {fileID: 5109476588290623295}
   - component: {fileID: 5557509400177312936}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: spine.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2706,7 +2706,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -2837,9 +2837,9 @@ GameObject:
   - component: {fileID: 8406817567907384513}
   - component: {fileID: 7516441670830068095}
   - component: {fileID: 1793224999647839099}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: forearm.L
-  m_TagString: Untagged
+  m_TagString: RagdollBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2952,7 +2952,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -2965,7 +2965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4598769816917561541}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: foot.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3000,9 +3000,9 @@ GameObject:
   - component: {fileID: 4833465164902291607}
   - component: {fileID: 2359871530275004892}
   - component: {fileID: 648920596526063887}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: upper_arm.L
-  m_TagString: Untagged
+  m_TagString: RagdollBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3115,7 +3115,7 @@ CharacterJoint:
   m_ProjectionAngle: 180
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 0
   m_MassScale: 1
   m_ConnectedMassScale: 1
@@ -3478,7 +3478,6 @@ MonoBehaviour:
   moveSpeed: 3000
   defaultItem: {fileID: -4497055413326994457, guid: 5c9302916c628b549a85f9e234b3e9b6, type: 3}
   _currentItem: {fileID: 0}
-  healthRegen: 4
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -3553,6 +3552,17 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     listeners: []
+  bonesToStun:
+  - {fileID: 7516441670830068095}
+  - {fileID: 8142028774143955233}
+  - {fileID: 4912474954989559166}
+  - {fileID: 4002194371603576438}
+  - {fileID: 5000653820840034588}
+  - {fileID: 893680230094146526}
+  - {fileID: 8706326597803041952}
+  - {fileID: 6182457493007732231}
+  - {fileID: 2359871530275004892}
+  - {fileID: 7359320968246071049}
   bodyMesh: {fileID: 7852606779742955613}
   body: {fileID: 188576632589700030}
   isFaceRandomized: 1
@@ -3586,7 +3596,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -3605,7 +3615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6939044202308811680}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: foot.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3637,7 +3647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3253421693397038997}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: foot.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
