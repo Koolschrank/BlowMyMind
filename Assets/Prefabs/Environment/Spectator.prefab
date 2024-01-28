@@ -126,6 +126,12 @@ MonoBehaviour:
   jumpHeight: 0.8
   maxRandomJumpDelay: 0.3
   laughVFX: {fileID: 3891349547943393335}
+  faceMaterials:
+  - {fileID: 2100000, guid: 668b29a76122c41d98c88e242360769d, type: 2}
+  - {fileID: 2100000, guid: bdf0fd854556d4cf78a481bd29a01142, type: 2}
+  - {fileID: 2100000, guid: f68309460fb334b0ba87b9060f212a40, type: 2}
+  - {fileID: 2100000, guid: 4f301f9a151543a4eb8af70b52399601, type: 2}
+  playerRenderer: {fileID: 2478163598301697861}
 --- !u!1001 &3865672913024781249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,6 +201,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccb6b650fab01cf449584c79c5159196, type: 3}
+--- !u!23 &2478163598301697861 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: ccb6b650fab01cf449584c79c5159196, type: 3}
+  m_PrefabInstance: {fileID: 3865672913024781249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3616135916592852010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ccb6b650fab01cf449584c79c5159196, type: 3}

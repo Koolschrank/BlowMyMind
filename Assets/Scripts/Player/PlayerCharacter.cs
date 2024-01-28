@@ -52,7 +52,10 @@ namespace Player
         public Transform hand;
         public float velocityToWalk = 0.1f;
         public float healthRegen = 1f;
-        
+
+
+        [HideInInspector] public string title = "1";
+        [HideInInspector] public Color color = Color.white;
         bool isGrounded = false;
         bool inputEnabled = false;
         public void SetInputEnabled(bool enabled)
@@ -107,8 +110,11 @@ namespace Player
             laughRender.material = laughMaterial;
             materials[2] = shirtMaterial;
             materials[3] = pantsMaterial;
+            color = shirtMaterial.color;
             bodyMesh.materials = materials;
         }
+        
+        
         
         private void Start()
         {
