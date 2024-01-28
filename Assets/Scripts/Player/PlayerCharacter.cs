@@ -208,20 +208,20 @@ namespace Player
             var knockBackMultiplier = stats.GetKnockBackMultiplierByDamage(damage);
             Debug.Log("Damage " + hitData.Damage);
             Debug.Log("Knockback " + knockBackMultiplier);
-            if (power != Vector3.zero)
+            var knockBack = power * (knockBackMultiplier + 20.0f);
+            if (knockBack != Vector3.zero)
             {
                 Stun();
             }
-            rigidBody.AddForce(power * knockBackMultiplier);
+            rigidBody.AddForce(knockBack);
             damage.Value += hitData.Damage;
             TakeDamage();
         }
 
 
         public void Stun()
-        {
-            //GetComponent<CapsuleCollider>().enabled = false;
-           // GetComponent<Animator>().enabled = false;
+        { 
+           animator.enabled = false;
             var stunDuration = 2.0f;//stats.GetStunDurationByDamage(damage);
             if (stunDuration <= 0)
                 return;
@@ -236,13 +236,12 @@ namespace Player
 
         public void Unstun()
         {
-            //GetComponent<Animator>().enabled = true;
-           // GetComponent<CapsuleCollider>().enabled = true;
             foreach (var bone in bonesToStun)
             {
                 bone.isKinematic = true;
             }
             isStunned = false;
+            //animator.enabled = true;
         }
         
         public void Action()
