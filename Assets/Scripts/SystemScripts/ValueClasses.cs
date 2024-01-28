@@ -287,7 +287,8 @@ public class FloatValue
             if (value_current == value_min)
             {
                 // print
-                Debug.Log("Value is empty");
+                
+                
 
                 valueLoss?.Invoke();
                 onValueLoss?.Invoke(this);
