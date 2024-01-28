@@ -184,7 +184,7 @@ namespace Player
             {
                 body.transform.rotation = Quaternion.LookRotation(movementDirection);
                 lastRotation = body.transform.rotation;
-                walkTime -= delta;
+                walkTime -= delta * moveInput.magnitude;
                 if (walkTime <= 0)
                 {
                     walkTime = walkTimeForSound;
