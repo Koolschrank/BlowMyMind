@@ -15,6 +15,7 @@ namespace SystemScripts
         [SerializeField] private VictoryScreen victoryScreen;
         [SerializeField] PlayerConnector[] playerConnectors;
         List<GameObject> players = new List<GameObject>();
+        [SerializeField] public Transform[] spawnPoints;
     
         private void Awake()
         {
@@ -51,7 +52,9 @@ namespace SystemScripts
         public void AddPlayer(GameObject newPlayer)
         {
             // random position
-            Respawn(newPlayer);
+            // spawn player at spanw point
+            newPlayer.transform.position = spawnPoints[players.Count].position;
+            
 
 
             if (players.Count >= playerConnectors.Length)
