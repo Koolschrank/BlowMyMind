@@ -11,24 +11,14 @@ namespace Player
 {
     public class PlayerCharacter : MonoBehaviour
     {
-        public Transform body;
-        public bool isFaceRandomized = true;
-        public bool isFaceRandomizedOnDeath = true;
-        public List<FaceData> availableFaces;
-        [SerializeField] private SkinnedMeshRenderer bodyMesh;
+        public PlayerStats stats;
         public FloatValue lives;
-        Rigidbody rb;
+        public Rigidbody rigidBody;
         public float moveSpeed = 10f;
-        
-        // 
         
         [SerializeField] private Item.Item defaultItem;
         
         public Item.Item _currentItem;
-
-        public float healthRegen = 1f;
-    
-
 
         // unity event for taking damage
         public UnityEngine.Events.UnityEvent OnTakeDamage;
@@ -39,8 +29,14 @@ namespace Player
 
         public HitFlashValue hitFlashValue;
 
-        [FormerlySerializedAs("hitMultiplier")] public FloatValue knockBackMultiplier;
+        public FloatValue damage;
         
+        [Header("Visuals")]
+        [SerializeField] private SkinnedMeshRenderer bodyMesh;
+        public Transform body;
+        public bool isFaceRandomized = true;
+        public bool isFaceRandomizedOnDeath = true;
+        public List<FaceData> availableFaces;
         public DamageNumberValue damageNumberValue;
         [SerializeField] private LaughParticles laughParticles;
         
@@ -51,6 +47,7 @@ namespace Player
         public Animator animator;
         public Transform hand;
         public float velocityToWalk = 0.1f;
+        
         bool isGrounded = false;
         public void SetGrounded(bool grounded)
         { 
@@ -58,21 +55,21 @@ namespace Player
             {
                 isGrounded = true;
                 
-                rb.drag = groundedDrag;
+                rigidBody.drag = groundedDrag;
             }
             else
             {
                 isGrounded = false;
                 
-                rb.drag = airDrag;
+                rigidBody.drag = airDrag;
             }
         }
 
         private void Awake()
         {
-            knockBackMultiplier.onValueChange += laughParticles.OnDamageChanged;
+            damage.Value_max = stats.maxPlayerDamage;
+            damage.onValueChange += laughParticles.OnDamageChanged;
             // PlayerSystem.instance.AddPlayer(gameObject);
-            rb = GetComponent<Rigidbody>();
             hitFlashValue.SetUpHitFlash();
             PickUpItem(defaultItem);
 
@@ -89,12 +86,19 @@ namespace Player
             materials[1] = faceData.faceMaterial;
             materials[4] = faceData.hairMaterial;
             bodyMesh.materials = materials;
-            Debug.Log("Materials set!");
+        }
+
+        public void SetClothsMaterials(Material pantsMaterial, Material shirtMaterial)
+        {
+            var materials = bodyMesh.materials;
+            materials[2] = shirtMaterial;
+            materials[3] = pantsMaterial;
+            bodyMesh.materials = materials;
         }
         
         private void Start()
         {
-            laughParticles.OnDamageChanged(knockBackMultiplier);
+            laughParticles.OnDamageChanged(damage);
         }
 
         public void EnableItemHitBox()
@@ -142,7 +146,7 @@ namespace Player
             if (!isGrounded) return;
 
             Vector3 movementDirection = new Vector3(moveInput.x, 0, moveInput.y).normalized;
-            rb.AddForce(movementDirection * movePower * moveSpeed * delta);
+            rigidBody.AddForce(movementDirection * movePower * moveSpeed * delta);
 
             // rotate to face direction of movement
             if (movementDirection != Vector3.zero)
@@ -177,14 +181,33 @@ namespace Player
             }
         }
 
-        public void TakeDamage(Vector3 power,Item.HitData hitData)
+        public void TakeDamage()
         {
+            
+            // unity event in not empty
+            if (OnTakeDamage != null)
+            {
+                OnTakeDamage.Invoke();
+            }
+            hitFlashValue.StartHitFlash();
+            damageNumberValue.Play(transform);
+        }
+        
+        public void TakeDamage(float amount)
+        {
+            if (amount <= 0)
+                return;
+            TakeDamage();
+            damage.Value += amount;
+        }
+        
+        public void TakeDamage(Vector3 power, HitData hitData)
+        {
+            var knockBackMultiplier = stats.GetKnockBackMultiplierByDamage(damage);
             Debug.Log("Damage " + hitData.Damage);
-            // debug Knockback
-            Debug.Log("Knockback " + knockBackMultiplier.Value);
-            knockBackMultiplier.Value = knockBackMultiplier.Value + hitData.Damage;
-            Debug.Log("Knockback 2" + knockBackMultiplier.Value);
-            rb.AddForce(power * knockBackMultiplier.Value);
+            Debug.Log("Knockback " + knockBackMultiplier);
+            rigidBody.AddForce(power * knockBackMultiplier);
+            damage.Value += hitData.Damage;
             TakeDamage();
         }
 
@@ -214,18 +237,6 @@ namespace Player
         {
             PickUpItem(defaultItem);
          
-        }
-
-        public void TakeDamage()
-        {
-            
-            // unity event in not empty
-            if (OnTakeDamage != null)
-            {
-                OnTakeDamage.Invoke();
-            }
-            hitFlashValue.StartHitFlash();
-            damageNumberValue.Play(transform);
         }
 
         public void MoveInput(Vector2 direction)
@@ -261,7 +272,7 @@ namespace Player
 
         public void Die()
         {
-            knockBackMultiplier.Value -= 1000f;
+            damage.Value = 0;
             Debug.Log("Player died!");
             // destroy game object
             PlayerSystem.instance.Respawn(gameObject);
@@ -269,11 +280,7 @@ namespace Player
             {
                 SetFaceMaterials(availableFaces[Random.Range(0, availableFaces.Count)]);
             }
-            rb.velocity = Vector3.zero;
-
-            knockBackMultiplier.SubtractValue(100000);
-            
-
+            rigidBody.velocity = Vector3.zero;
             lives.Value -= 1f;
 
             PlayerSystem.instance.CheckForWinner();

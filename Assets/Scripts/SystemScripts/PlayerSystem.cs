@@ -10,7 +10,8 @@ namespace SystemScripts
         // make this a singleton
         public static PlayerSystem instance;
 
-        [SerializeField] private List<Color> playerColors;
+        [SerializeField] private List<Material> playerPantMaterials;
+        [SerializeField] private List<Material> playerShirtMaterials;
         [SerializeField] private VictoryScreen victoryScreen;
         [SerializeField] PlayerConnector[] playerConnectors;
         List<GameObject> players = new List<GameObject>();
@@ -57,9 +58,12 @@ namespace SystemScripts
             {
                 return;
             }
+
+            newPlayer.GetComponent<PlayerCharacter>().SetClothsMaterials(playerPantMaterials[players.Count],
+                playerShirtMaterials[players.Count]);
             playerConnectors[players.Count].ConnectListenersToPlayer(newPlayer);
             players.Add(newPlayer);
-
+           
         }
 
         public void Respawn(GameObject playerToReSpawn)
@@ -115,7 +119,7 @@ namespace SystemScripts
 
             foreach (var listener in healthListener)
             {
-                playerMove.knockBackMultiplier.AddListener(listener);
+                playerMove.damage.AddListener(listener);
             }
         }
     }

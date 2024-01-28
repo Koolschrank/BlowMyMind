@@ -6,6 +6,7 @@ using UnityEngine;
 public class LaughParticles : MonoBehaviour
 {
     [SerializeField] private AnimationCurve emissionByDamage;
+    public float maxEmission = 50;
     private ParticleSystem _particleSystem;
 
     private void Awake()
@@ -16,6 +17,7 @@ public class LaughParticles : MonoBehaviour
     public void OnDamageChanged(FloatValue newDamage)
     {
         var emission = _particleSystem.emission;
-        emission.rateOverTime = emissionByDamage.Evaluate(newDamage.Value);
+        var newEmissionOverTime = maxEmission * emissionByDamage.Evaluate(newDamage.Value / newDamage.Value_max);
+        emission.rateOverTime = newEmissionOverTime;
     }
 }

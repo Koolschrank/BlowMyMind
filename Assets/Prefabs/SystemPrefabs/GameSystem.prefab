@@ -102,8 +102,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62742562f727a934b8a13be371a68b1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPantMaterials:
+  - {fileID: 2100000, guid: 3974ad366a46862419035ca52582545f, type: 2}
+  - {fileID: 2100000, guid: 72d89de71feef464fb430884f54b3b9f, type: 2}
+  - {fileID: 2100000, guid: b3674b60c3fbcc942b42688db7aea9c9, type: 2}
+  - {fileID: 2100000, guid: e2848e1ca6d8e2d48802b119d27abd09, type: 2}
+  playerShirtMaterials:
+  - {fileID: 2100000, guid: 4275aa4925ea0614bb7c4b9441c3052a, type: 2}
+  - {fileID: 2100000, guid: 22bbc11136a78684d958d71b9652b06e, type: 2}
+  - {fileID: 2100000, guid: e1670528c26598f4598cc3ac044a887b, type: 2}
+  - {fileID: 2100000, guid: c12c0152479a01940b3a60b7aca9fdff, type: 2}
+  victoryScreen: {fileID: 0}
   playerConnectors: []
-  players: []
+  minPlayerSpawnPosition: {x: -5, y: 10, z: -5}
+  maxPlayerSpawnPosition: {x: 5, y: 10, z: 5}
 --- !u!82 &3163914954345127365
 AudioSource:
   m_ObjectHideFlags: 0

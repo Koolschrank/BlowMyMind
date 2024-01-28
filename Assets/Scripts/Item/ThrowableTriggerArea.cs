@@ -9,12 +9,23 @@ namespace Item
         [SerializeField] private LayerMask collisionMask;
         [SerializeField] private UnityEvent triggerEvent;
         [SerializeField] ThrowableProjectile throwableProjectile_Parent;
+        [SerializeField] private HitData hitData;
         private void OnTriggerEnter(Collider other)
         {
             if (collisionMask == (collisionMask | (1 << other.gameObject.layer)))
             {
                 triggerEvent?.Invoke();
                 throwableProjectile_Parent.PlayerCollision(other);
+                var player = other.GetComponent<PlayerCharacter>();
+
+                if (player == null)
+                {
+                    Debug.LogError($"Throwable Area was enter by collider '{other.name}' which is missing a valid PlayerCharacter component.");
+                    return;
+                }
+                var positionDiff = player.transform.position - transform.position;
+                Vector3 power = positionDiff * hitData.ForwardForce + transform.up * hitData.UpForce;
+                player.TakeDamage(power, hitData);
             }
         }
     }

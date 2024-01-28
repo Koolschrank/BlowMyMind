@@ -48,17 +48,19 @@ namespace Item
         }
     }
     
-    // serializeable class for hit with forwarde force up forece and damage
+    // Serializable class for hit with forward force up force and damage
     [Serializable]
     public class HitData
     {
         [SerializeField] float forwardForce = 100f;
         [SerializeField] float upForce = 100f;
         [SerializeField] float damage = 10f;
+        [SerializeField] float selfDamage = 0f;
 
         public float ForwardForce { get => forwardForce; set => forwardForce = value; }
         public float UpForce { get => upForce; set => upForce = value; }
         public float Damage { get => damage; set => damage = value; }
+        public float SelfDamage { get => selfDamage; set => selfDamage = value; }
         
         public void ActivateEffects(){}
     }
