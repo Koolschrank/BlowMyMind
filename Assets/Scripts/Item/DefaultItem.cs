@@ -19,7 +19,7 @@ namespace Item
             if (!collider.TryGetComponent(out PlayerCharacter nearbyPlayer))
                 return;
             
-            if (nearbyPlayer == Player)
+            if (nearbyPlayer == Player) 
                 return;
             
             Vector3 power = Player.GetBody().forward * hitData.ForwardForce + Player.GetBody().up * hitData.UpForce;
