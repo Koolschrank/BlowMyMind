@@ -206,7 +206,8 @@ namespace Player
                 OnTakeDamage.Invoke();
             }
             hitFlashValue.StartHitFlash();
-            damageNumberValue.Play(transform);
+
+            //damageNumberValue.Play(transform);
         }
         
         public void TakeDamage(float amount)
@@ -229,6 +230,9 @@ namespace Player
             Debug.Log("Knockback " + knockBackMultiplier);
             rigidBody.AddForce(power * knockBackMultiplier);
             damage.Value += hitData.Damage;
+            hitData.ActivateEffects();
+            hitData.GetDamageNumberValue().Play(transform);
+            hitData.ActivateEffects();
             TakeDamage();
         }
 

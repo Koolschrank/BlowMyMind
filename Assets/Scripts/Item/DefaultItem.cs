@@ -25,7 +25,7 @@ namespace Item
             Vector3 power = Player.GetBody().forward * hitData.ForwardForce + Player.GetBody().up * hitData.UpForce;
             nearbyPlayer.TakeDamage(power, hitData);
             Player.TakeDamage(hitData.SelfDamage);
-            hitData.ActivateEffects();
+           
         }
 
         public override void EnableHitBox()

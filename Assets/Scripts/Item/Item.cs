@@ -56,12 +56,32 @@ namespace Item
         [SerializeField] float upForce = 100f;
         [SerializeField] float damage = 10f;
         [SerializeField] float selfDamage = 0f;
+        [SerializeField] SlowDownValue slowDownValues;
+        [SerializeField] DamageNumberValue damageNumberValue;
+        [SerializeField] SoundEffectValue soundEffectValue;
+        // unity event for taking damage
+        public UnityEngine.Events.UnityEvent OnTakeDamage;
+
+
 
         public float ForwardForce { get => forwardForce; set => forwardForce = value; }
         public float UpForce { get => upForce; set => upForce = value; }
         public float Damage { get => damage; set => damage = value; }
         public float SelfDamage { get => selfDamage; set => selfDamage = value; }
         
-        public void ActivateEffects(){}
+        // get damage number value
+        public DamageNumberValue GetDamageNumberValue()
+        {
+            return damageNumberValue;
+        }
+        public void ActivateEffects()
+        {
+            soundEffectValue?.Play();
+            slowDownValues?.Play();
+            // event
+            OnTakeDamage?.Invoke();
+
+        
+        }
     }
 }
