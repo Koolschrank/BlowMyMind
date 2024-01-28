@@ -141,7 +141,7 @@ namespace SystemScripts
 
         public void PlayerWin(PlayerCharacter playerToWin)
         {
-            victoryScreen.Activate(playerToWin != null ? playerToWin.title : "Nobody", playerToWin.color);
+            victoryScreen.Activate(playerToWin != null ? playerToWin.title : "Nobody", playerToWin.color, playerToWin.bodyMesh);
             // debug log
             Debug.Log("Player " + (playerToWin != null ? playerToWin.title : "null") + " wins!");
         }

@@ -35,7 +35,7 @@ namespace Player
         public FloatValue damage;
         
         [Header("Visuals")]
-        [SerializeField] private SkinnedMeshRenderer bodyMesh;
+        [SerializeField] public SkinnedMeshRenderer bodyMesh;
         public Transform body;
         public bool isFaceRandomized = true;
         public bool isFaceRandomizedOnDeath = true;
