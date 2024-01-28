@@ -4223,6 +4223,7 @@ GameObject:
   - component: {fileID: 1035874733780036053}
   - component: {fileID: 1250711279703891248}
   - component: {fileID: 4736350082295370191}
+  - component: {fileID: 6117005387439177402}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -4532,7 +4533,19 @@ MonoBehaviour:
     noGainEventOnFull: 0
     valueChange:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 6117005387439177402}
+          m_TargetAssemblyTypeName: LaughManager, Assembly-CSharp
+          m_MethodName: OnDamageChange
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     valueLoss:
       m_PersistentCalls:
         m_Calls: []
@@ -4642,6 +4655,28 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6117005387439177402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8548235130282511181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd48f741673ad5842bfae927dc3bf623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laugh1: {fileID: 8027896945026242605}
+  laugh2: {fileID: 3780342032858821021}
+  laugh3: {fileID: 4755017518834783051}
+  useLaugh: 1
+  threshold1: 15
+  threshold2: 20
+  threshold3: 60
+  maxVolume: 0.6
+  fadeTime: 1
+  playerCharacter: {fileID: 1250711279703891248}
 --- !u!1 &8959307645654106344
 GameObject:
   m_ObjectHideFlags: 0
