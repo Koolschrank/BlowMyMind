@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: -8429031983275550736, guid: eea1be953bff45f48a56e449ba4d38bf, type: 3}
+  pickupVFX: {fileID: 2320794454688571293, guid: a5ac5c972163ced46a8ac4930c0e2beb, type: 3}
 --- !u!54 &-1277488506962917623
 Rigidbody:
   m_ObjectHideFlags: 0

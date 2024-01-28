@@ -7,6 +7,7 @@ namespace Item
     public class PickupItem : MonoBehaviour
     {
         [SerializeField] private Item item;
+        [SerializeField] private ParticleSystem pickupVFX;
 
         private const float MinYPos = 1.5f;
         private const float RotationSpeed = 1.3f;
@@ -28,6 +29,7 @@ namespace Item
         private void OnCollected(PlayerCharacter player)
         {
             player.PickUpItem(item);
+            Instantiate(pickupVFX, transform.position, Quaternion.Euler(-90, 0, 0));
             DestroyItem();
         }
 
