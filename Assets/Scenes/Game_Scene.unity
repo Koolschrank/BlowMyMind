@@ -7496,8 +7496,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1625635548}
     - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
+      propertyPath: playerColors.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
       propertyPath: playerConnectors.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
+      propertyPath: playerColors.Array.data[0].b
+      value: 0.127759
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
+      propertyPath: playerColors.Array.data[0].g
+      value: 0.127759
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
+      propertyPath: playerColors.Array.data[0].r
+      value: 0.8207547
       objectReference: {fileID: 0}
     - target: {fileID: 1763686270308493582, guid: 200164ad30007a24dac52d2a73f4e28c, type: 3}
       propertyPath: playerConnectors.Array.data[0].ammoListener.Array.size
