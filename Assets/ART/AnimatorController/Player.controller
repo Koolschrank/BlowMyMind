@@ -226,7 +226,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: metarig_Idle 1
-  m_Speed: 4
+  m_Speed: 3.755
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5234905844173179387}
