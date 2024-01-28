@@ -6,12 +6,19 @@ namespace Item
 {
     public class ThrowableProjectile : MonoBehaviour
     {
+        PlayerCharacter originalPlayer;
         // collision mask
         [SerializeField] private LayerMask collisionMask;
         [SerializeField] private Collider triggerArea;
         [SerializeField] private bool stopsOnCollision;
         [SerializeField] HitData damageData;
         [SerializeField] bool setPlayerVelocityToZero;
+        bool onGround = false;
+
+        public void SetOriginalPlayer(PlayerCharacter player)
+        {
+            originalPlayer = player;
+        }
         private void OnCollisionEnter(Collision other)
         {
             Debug.Log("Item hit box trigger enter");
@@ -22,6 +29,7 @@ namespace Item
                 Debug.Log("Item hit box trigger enter2");
                 GetComponent<Rigidbody>().velocity = Vector3.zero;
                 triggerArea.enabled = true;
+                onGround = true;
             }
 
 
@@ -37,6 +45,11 @@ namespace Item
                 Debug.LogError($"Throwable Area was enter by collider '{other.name}' which is missing a valid PlayerCharacter component.");
                 return;
             }
+            if (player == originalPlayer && !onGround)
+            {
+                return;
+            }
+            
             if (setPlayerVelocityToZero)
             {
                 player.SetPlayerVelocityToZero();

@@ -105,9 +105,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitData:
-    forwardForce: 30
+    forwardForce: 70
     upForce: 20
-    damage: 20
+    damage: 50
     selfDamage: 0
     slowDownValues:
       hasSlowDown: 0
@@ -127,6 +127,8 @@ MonoBehaviour:
     soundEffectValue:
       clip: {fileID: 0}
       volume: 0
+      hasPitchVariation: 0
+      pitchVariation: 0
     OnTakeDamage:
       m_PersistentCalls:
         m_Calls: []

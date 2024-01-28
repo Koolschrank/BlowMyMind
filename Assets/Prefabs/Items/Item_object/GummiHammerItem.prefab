@@ -372,9 +372,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownTime: 0.5
   hitData:
-    forwardForce: 40
+    forwardForce: 80
     upForce: 30
-    damage: 10
+    damage: 20
     selfDamage: 0
     slowDownValues:
       hasSlowDown: 0
@@ -390,9 +390,12 @@ MonoBehaviour:
       damageNumber: {fileID: 1259023133563206875, guid: ec6707811297e2243886827ef81ed331, type: 3}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0.5, z: 0}
+      word: 
     soundEffectValue:
       clip: {fileID: 8300000, guid: 08b15283493d14e6ebacebed36250d4e, type: 3}
       volume: 0.769
+      hasPitchVariation: 0
+      pitchVariation: 0
     OnTakeDamage:
       m_PersistentCalls:
         m_Calls:

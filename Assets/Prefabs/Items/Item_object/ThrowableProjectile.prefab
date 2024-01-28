@@ -353,8 +353,8 @@ MonoBehaviour:
   stopsOnCollision: 1
   damageData:
     forwardForce: 0
-    upForce: 50
-    damage: 15
+    upForce: 80
+    damage: 50
     selfDamage: 0
     slowDownValues:
       hasSlowDown: 0
@@ -370,9 +370,12 @@ MonoBehaviour:
       damageNumber: {fileID: 1259023133563206875, guid: 43447c6b1d488a146bd8e53e4e48a590, type: 3}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0.5, z: 0}
+      word: 
     soundEffectValue:
       clip: {fileID: 8300000, guid: 08b15283493d14e6ebacebed36250d4e, type: 3}
       volume: 0.769
+      hasPitchVariation: 0
+      pitchVariation: 0
     OnTakeDamage:
       m_PersistentCalls:
         m_Calls:
@@ -502,9 +505,12 @@ MonoBehaviour:
       damageNumber: {fileID: 0}
       spawnPoint: {fileID: 0}
       offset: {x: 0, y: 0, z: 0}
+      word: 
     soundEffectValue:
       clip: {fileID: 0}
       volume: 0
+      hasPitchVariation: 0
+      pitchVariation: 0
     OnTakeDamage:
       m_PersistentCalls:
         m_Calls: []
@@ -571,6 +577,10 @@ PrefabInstance:
     - target: {fileID: 5533822275233441464, guid: a0a3c6df6db9acf40987506353b482c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713114668702728865, guid: a0a3c6df6db9acf40987506353b482c5, type: 3}
+      propertyPath: SizeModule.curve.scalar
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7713114668702728865, guid: a0a3c6df6db9acf40987506353b482c5, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
