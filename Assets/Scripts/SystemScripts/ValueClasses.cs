@@ -201,7 +201,7 @@ public class DamageNumberValue
     public void Play(Transform transform)
     {
         if (!hasDamageNumber) return;
-        damageNumber.Spawn(transform.position + offset, "Haha");
+        damageNumber.Spawn(transform.position + offset, word);
     }
 
     public void Play(float damage)
