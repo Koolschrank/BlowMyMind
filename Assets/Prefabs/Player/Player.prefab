@@ -4601,7 +4601,7 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   walkSounds:
   - clip: {fileID: 8300000, guid: 4cf47ad5b31ea6640addd4045fa77c8b, type: 3}
-    volume: 0.103
+    volume: 0.07
     hasPitchVariation: 1
     pitchVariation: 0.2
   walkTimeForSound: 0.2
