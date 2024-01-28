@@ -6101,6 +6101,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1554355819538591260, guid: 17f588d8844ea5e4dafbb6ce30b4200e, type: 3}
+      propertyPath: virtualCamera
+      value: 
+      objectReference: {fileID: 1366339390}
+    - target: {fileID: 1554355819538591260, guid: 17f588d8844ea5e4dafbb6ce30b4200e, type: 3}
+      propertyPath: cameraRiseTime
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554355819538591260, guid: 17f588d8844ea5e4dafbb6ce30b4200e, type: 3}
+      propertyPath: cameraRiseHeight
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1778722072755364802, guid: 17f588d8844ea5e4dafbb6ce30b4200e, type: 3}
       propertyPath: m_Layer
       value: 8

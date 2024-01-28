@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4327475241170174832}
   - component: {fileID: 1338828392985355809}
   - component: {fileID: 2510953051432437656}
+  - component: {fileID: 2864421598135112235}
   m_Layer: 0
   m_Name: Spectator
   m_TagString: Untagged
@@ -107,3 +108,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2864421598135112235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8194034559164679183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3948bcca0d2ad6349b6277d1f9a57615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeForOneJump: 0.5
+  jumpHeight: 0.8
+  maxRandomJumpDelay: 0.3
