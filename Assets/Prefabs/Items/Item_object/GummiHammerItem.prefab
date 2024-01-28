@@ -132,10 +132,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDownTime: 0.5
   hitData:
-    forwardForce: 200
-    upForce: 100
+    forwardForce: 40
+    upForce: 30
     damage: 10
     selfDamage: 0
+    slowDownValues:
+      hasSlowDown: 0
+      magnitudeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      duration: 0.5
+    damageNumberValue:
+      hasDamageNumber: 0
+      damageNumber: {fileID: 0}
+      spawnPoint: {fileID: 0}
+      offset: {x: 0, y: 0, z: 0}
+    soundEffectValue:
+      clip: {fileID: 0}
+      volume: 0
+    OnTakeDamage:
+      m_PersistentCalls:
+        m_Calls: []
   hitBox: {fileID: 4555138265921317225}
 --- !u!1001 &8070292730105914322
 PrefabInstance:

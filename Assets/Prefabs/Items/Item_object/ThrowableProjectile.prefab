@@ -112,9 +112,29 @@ MonoBehaviour:
   stopsOnCollision: 1
   damageData:
     forwardForce: 0
-    upForce: 300
-    damage: 25
+    upForce: 50
+    damage: 15
     selfDamage: 0
+    slowDownValues:
+      hasSlowDown: 0
+      magnitudeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      duration: 0.5
+    damageNumberValue:
+      hasDamageNumber: 0
+      damageNumber: {fileID: 0}
+      spawnPoint: {fileID: 0}
+      offset: {x: 0, y: 0, z: 0}
+    soundEffectValue:
+      clip: {fileID: 0}
+      volume: 0
+    OnTakeDamage:
+      m_PersistentCalls:
+        m_Calls: []
   setPlayerVelocityToZero: 1
 --- !u!1 &5539795898357902498
 GameObject:
@@ -215,6 +235,26 @@ MonoBehaviour:
     upForce: 100
     damage: 20
     selfDamage: 0
+    slowDownValues:
+      hasSlowDown: 0
+      magnitudeCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      duration: 0.5
+    damageNumberValue:
+      hasDamageNumber: 0
+      damageNumber: {fileID: 0}
+      spawnPoint: {fileID: 0}
+      offset: {x: 0, y: 0, z: 0}
+    soundEffectValue:
+      clip: {fileID: 0}
+      volume: 0
+    OnTakeDamage:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1001 &5428399715261703275
 PrefabInstance:
   m_ObjectHideFlags: 0
