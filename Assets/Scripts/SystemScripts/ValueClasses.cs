@@ -76,7 +76,7 @@ public class SpawnValue
 public class HitFlashValue
 {
     [SerializeField] bool hasHitFlash = false;
-    [SerializeField] MeshRenderer[] meshes;
+    [SerializeField] SkinnedMeshRenderer[] meshes;
     [SerializeField] Material hitMaterial;
     Material[] originalMaterials;
     [SerializeField] float hitFlashTime = 0.1f;
@@ -188,6 +188,7 @@ public class DamageNumberValue
     [SerializeField] DamageNumber damageNumber;
     [SerializeField] Transform spawnPoint;
     [SerializeField] Vector3 offset;
+    [SerializeField] String word;
 
 
 
@@ -200,7 +201,7 @@ public class DamageNumberValue
     public void Play(Transform transform)
     {
         if (!hasDamageNumber) return;
-        damageNumber.Spawn(transform.position + offset, "Haha");
+        damageNumber.Spawn(transform.position + offset, word);
     }
 
     public void Play(float damage)
