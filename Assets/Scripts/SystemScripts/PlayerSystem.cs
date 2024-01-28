@@ -19,6 +19,7 @@ namespace SystemScripts
         [SerializeField] public Transform[] spawnPoints;
         [SerializeField] public GameObject StartUI;
         [SerializeField] public SoundEffectValue playerDeathSound;
+        [SerializeField] public SoundEffectValue playerDeathSound2;
         [SerializeField] public SlowDownValue playerDeathSlowDown;
         bool gameStarted = false;
 
@@ -114,6 +115,7 @@ namespace SystemScripts
             OnPlayerDie.Invoke();
             playerDeathSlowDown.Play();
             playerDeathSound.Play();
+            playerDeathSound2.Play();
 
 
 
